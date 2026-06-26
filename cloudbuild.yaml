@@ -4,7 +4,7 @@ steps:
       [
         "build",
         "-t",
-        "asia-east1-docker.pkg.dev/skills-building-413521/virtual-assistant/virtual-assistant:lastest",
+        "asia-east1-docker.pkg.dev/skills-building-413521/virtual-assistant/virtual-assistant:latest",
         ".",
       ]
 
@@ -12,16 +12,18 @@ steps:
     args:
       [
         "push",
-        "asia-east1-docker.pkg.dev/skills-building-413521/virtual-assistant/virtual-assistant:lastest",
+        "asia-east1-docker.pkg.dev/skills-building-413521/virtual-assistant/virtual-assistant:latest",
       ]
 
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
     entrypoint: "gcloud"
     args:
-      [virtual-assistant",
+      [
+        "run",
+        "deploy",
         "virtual-assistant",
         "--image",
-        "asia-east1-docker.pkg.dev/skills-building-413521/virtual-assistant/virtual-assistant:lastest",
+        "asia-east1-docker.pkg.dev/skills-building-413521/virtual-assistant/virtual-assistant:latest",
         "--region",
         "asia-east1",
         "--platform",
@@ -30,7 +32,7 @@ steps:
       ]
 
 images:
-  - "asia-east1-docker.pkg.dev/skills-building-413521/virtual-assistant/virtual-assistant:lastest"
+  - "asia-east1-docker.pkg.dev/skills-building-413521/virtual-assistant/virtual-assistant:latest"
 
 options:
   logging: CLOUD_LOGGING_ONLY
