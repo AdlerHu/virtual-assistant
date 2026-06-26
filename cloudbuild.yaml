@@ -1,0 +1,38 @@
+steps:
+  - name: "gcr.io/cloud-builders/docker"
+    args:
+      [
+        "build",
+        "-t",
+        "asia-east1-docker.pkg.dev/skills-building-413521/cloud-run-source-deploy/virtual-assistant:lastest",
+        ".",
+      ]
+
+  - name: "gcr.io/cloud-builders/docker"
+    args:
+      [
+        "push",
+        "asia-east1-docker.pkg.dev/skills-building-413521/cloud-run-source-deploy/virtual-assistant:lastest",
+      ]
+
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+    entrypoint: "gcloud"
+    args:
+      [
+        "run",
+        "deploy",
+        "virtual-assistant",
+        "--image",
+        "asia-east1-docker.pkg.dev/skills-building-413521/cloud-run-source-deploy/virtual-assistant:lastest",
+        "--region",
+        "asia-east1",
+        "--platform",
+        "managed",
+        "--allow-unauthenticated",
+      ]
+
+images:
+  - "asia-east1-docker.pkg.dev/skills-building-413521/cloud-run-source-deploy/virtual-assistant:lastest"
+
+options:
+  logging: CLOUD_LOGGING_ONLY
