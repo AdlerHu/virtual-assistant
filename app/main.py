@@ -2,7 +2,8 @@ import os
 import requests
 from flask import Flask, request
 from google.cloud import firestore
-from app import config
+# from app import config
+import app.config as config
 
 app = Flask(__name__)
 
