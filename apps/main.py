@@ -2,9 +2,7 @@ import os
 import requests
 from flask import Flask, request
 from google.cloud import firestore
-# from app import config
-# import app.config as config
-from app.config import get_bot_token, get_project_id
+from config import get_bot_token, get_project_id
 
 app = Flask(__name__)
 
@@ -13,7 +11,6 @@ app = Flask(__name__)
 
 BOT_TOKEN = get_bot_token()
 PROJECT_ID = get_project_id()
-# DATABASE_ID = os.environ.get("DATABASE_ID", "restaurant-list")
 
 db = firestore.Client(project=PROJECT_ID)
 
