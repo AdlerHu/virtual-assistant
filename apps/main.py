@@ -31,7 +31,7 @@ def list_restaurants():
     for doc in docs:
         r = doc.to_dict()
         rows.append(
-            f"{r.get('name', doc.id)}｜{r.get('category', '-')}"
+            f"{r.get('nickname', doc.id)}｜{r.get('fullname', '-')}｜{r.get('category', '-')}"
             f"｜${r.get('budget_min', '?')}-{r.get('budget_max', '?')}"
         )
 
