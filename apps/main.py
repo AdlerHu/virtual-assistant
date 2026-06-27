@@ -2,15 +2,15 @@ import os
 import requests
 from flask import Flask, request
 from google.cloud import firestore
-from config import get_bot_token, get_project_id
+# from config import get_bot_token, get_project_id
 
 app = Flask(__name__)
 
-# BOT_TOKEN = os.environ["BOT_TOKEN"]
-# PROJECT_ID = os.environ["PROJECT_ID"]
+BOT_TOKEN = os.environ["BOT_TOKEN"]
+PROJECT_ID = os.environ["PROJECT_ID"]
 
-BOT_TOKEN = get_bot_token()
-PROJECT_ID = get_project_id()
+# BOT_TOKEN = get_bot_token()
+# PROJECT_ID = get_project_id()
 
 db = firestore.Client(project=PROJECT_ID)
 
