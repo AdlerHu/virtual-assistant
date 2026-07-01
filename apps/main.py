@@ -2,7 +2,8 @@ import os
 import requests
 from flask import Flask, request
 from google.cloud import firestore
-# from config import get_bot_token, get_project_id
+from services.intent_router import detect_intent
+
 
 app = Flask(__name__)
 
@@ -46,13 +47,15 @@ def webhook():
     chat_id = chat.get("id")
     text = message.get("text", "")
 
-    if not chat_id:
-        return "ok"
-
     if text == "/restaurants":
         answer = list_restaurants()
     else:
-        answer = "可用指令：\n/restaurants 查餐廳清單"
+        intent = detect_intent(text)
+
+        if intent == "restaurant_list":
+            answer = list_restaurants()
+        else:
+            answer = "可用功能：\n你可以說「想看餐廳名單」、「有什麼餐廳推薦」、「今天吃什麼」。"
 
     send_message(chat_id, answer)
     return "ok"
