@@ -2,7 +2,7 @@ import os
 import requests
 from flask import Flask, request
 from google.cloud import firestore
-from services.intent_router import detect_intent
+from apps.services.intent_router import detect_intent
 
 
 app = Flask(__name__)
