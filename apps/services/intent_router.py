@@ -4,11 +4,10 @@ from vertexai.generative_models import GenerativeModel
 
 
 PROJECT_ID = os.environ["PROJECT_ID"]
-LOCATION = os.environ.get("LOCATION", "asia-east1")
+LOCATION = os.environ.get("LOCATION", "global")
 
 vertexai.init(project=PROJECT_ID, location=LOCATION)
-model = GenerativeModel("gemini-1.5-flash")
-
+model = GenerativeModel("gemini-2.5-flash")
 
 def detect_intent(text: str) -> str:
     prompt = f"""
