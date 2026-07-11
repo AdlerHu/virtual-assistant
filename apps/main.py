@@ -3,6 +3,13 @@ import requests
 from flask import Flask, request
 from google.cloud import firestore
 from apps.services.intent_router import detect_intent
+from features.self_introduction import self_introduction
+from features.restaurants import check_list_restaurants, add_restaurant_list, alter_restaurant_list, del_restaurant_list, surprise_me
+from features.reminder import reminder
+from features.translation import translation
+from features.english_practice import english_practice
+from features.question_answering import question_answering
+from features.unknown import unknown
 
 
 app = Flask(__name__)
@@ -22,21 +29,6 @@ def send_message(chat_id, text):
         timeout=10,
     )
 
-def list_restaurants():
-    docs = db.collection("restaurant_list").stream()
-
-    rows = []
-    for doc in docs:
-        r = doc.to_dict()
-        rows.append(
-            f"{r.get('nickname', doc.id)}｜{r.get('fullname', '-')}｜{r.get('category', '-')}"
-            f"｜${r.get('budget_min', '?')}-{r.get('budget_max', '?')}"
-        )
-
-    if not rows:
-        return "目前沒有餐廳資料。"
-
-    return "餐廳清單：\n\n" + "\n".join(rows)
 
 @app.route("/", methods=["POST"])
 def webhook():
@@ -47,15 +39,40 @@ def webhook():
     chat_id = chat.get("id")
     text = message.get("text", "")
 
-    if text == "/restaurants":
-        answer = list_restaurants()
-    else:
-        intent = detect_intent(text)
+    intent = detect_intent(text)
 
-        if intent == "restaurant_list":
-            answer = list_restaurants()
-        else:
-            answer = "可用功能：\n你可以說「想看餐廳名單」、「有什麼餐廳推薦」、「今天吃什麼」。"
+    if intent == "self_introduction":
+        answer = self_introduction()
+    elif intent == "check_restaurant_list":
+        answer = check_list_restaurants(db)
+    elif intent == "add_restaurant_list":
+        answer = add_restaurant_list()
+    elif intent == "alter_restaurant_list":
+        answer = alter_restaurant_list()
+    elif intent == "del_restaurant_list":
+        answer = del_restaurant_list()
+    elif intent == "surprise_me":
+        answer = surprise_me()
+    elif intent == "reminder":
+        answer = reminder()
+    elif intent == 'question_answering':
+        answer = question_answering()
+    elif intent == 'translation':
+        answer = translation()
+    elif intent == 'english_practice':
+        answer = english_practice()
+    else:
+        answer = unknown()
+
+    # if text == "/restaurants":
+    #     answer = list_restaurants()
+    # else:
+    #     intent = detect_intent(text)
+
+    #     if intent == "restaurant_list":
+    #         answer = list_restaurants()
+    #     else:
+    #         answer = "可用功能：\n你可以說「想看餐廳名單」、「有什麼餐廳推薦」、「今天吃什麼」。"
 
     send_message(chat_id, answer)
     return "ok"
