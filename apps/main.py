@@ -64,16 +64,6 @@ def webhook():
     else:
         answer = unknown()
 
-    # if text == "/restaurants":
-    #     answer = list_restaurants()
-    # else:
-    #     intent = detect_intent(text)
-
-    #     if intent == "restaurant_list":
-    #         answer = list_restaurants()
-    #     else:
-    #         answer = "可用功能：\n你可以說「想看餐廳名單」、「有什麼餐廳推薦」、「今天吃什麼」。"
-
     send_message(chat_id, answer)
     return "ok"
 
