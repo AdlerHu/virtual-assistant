@@ -11,6 +11,6 @@ def unknown():
 
     '''
 
-    introduction = self_introduction
+    introduction = self_introduction()
     
     return text + introduction
