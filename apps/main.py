@@ -4,7 +4,7 @@ from flask import Flask, request
 from google.cloud import firestore
 from apps.services.intent_router import detect_intent
 from apps.features.self_introduction import self_introduction
-from apps.features.restaurants import check_list_restaurants, add_restaurant_list, alter_restaurant_list, del_restaurant_list, surprise_me
+from apps.features.restaurant_list import check_list_restaurants, add_restaurant_list, alter_restaurant_list, del_restaurant_list, surprise_me
 from apps.features.reminder import reminder
 from apps.features.translation import translation
 from apps.features.english_practice import english_practice
