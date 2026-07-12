@@ -56,7 +56,7 @@ def webhook():
     elif intent == "reminder":
         answer = reminder()
     elif intent == 'question_answering':
-        answer = question_answering()
+        answer = question_answering(question=text)
     elif intent == 'translation':
         answer = translation()
     elif intent == 'english_practice':
