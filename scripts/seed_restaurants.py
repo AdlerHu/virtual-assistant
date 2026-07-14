@@ -1,3 +1,5 @@
+# 初始的餐廳名單，保留以備餐廳名單需要回復初始狀態
+
 from google.cloud import firestore
 
 db = firestore.Client()
@@ -10,7 +12,6 @@ restaurants = [
         "URL": "https://maps.app.goo.gl/g7SkpFWHVKgk98847",
         "budget_min": 130,
         "budget_max": 200,
-        "flavor": "light",
         "category": "taiwanese",
         "tags": ["燒臘", "便當", "乾炒牛河"],
     },
@@ -21,7 +22,6 @@ restaurants = [
         "URL": "https://maps.app.goo.gl/aB7hKebsGQgANUkEA",
         "budget_min": 200,
         "budget_max": 400,
-        "flavor": "spicy",
         "category": "taiwanese",
         "tags": ["鐵板燒", "蛤蠣湯", "吃到飽"],
     },
@@ -32,7 +32,6 @@ restaurants = [
         "URL": "https://maps.app.goo.gl/Qdh6vmdN3qc2pYm7A",
         "budget_min": 100,
         "budget_max": 200,
-        "flavor": "curry",
         "category": "japanese",
         "tags": ["咖哩", "炸物", "味噌湯"],
     },
@@ -43,7 +42,6 @@ restaurants = [
         "URL": "https://maps.app.goo.gl/NXdnaY52uFj4iMSb7",
         "budget_min": 100,
         "budget_max": 200,
-        "flavor": "curry",
         "category": "taiwanese",
         "tags": ["咖哩", "蛋包飯", "炸物"],
     },
@@ -54,7 +52,6 @@ restaurants = [
         "URL": "https://maps.app.goo.gl/7ov8azqh4PeiftT18",
         "budget_min": 200,
         "budget_max": 400,
-        "flavor": "light",
         "category": "thai",
         "tags": ["火鍋", "蔬菜", "吃到飽"],
     },
@@ -65,7 +62,6 @@ restaurants = [
         "URL": "https://maps.app.goo.gl/d7HkKWf35sj2uiux7",
         "budget_min": 200,
         "budget_max": 400,
-        "flavor": "beef",
         "category": "taiwanese",
         "tags": ["牛排", "玉米濃湯"],
     },
@@ -76,7 +72,6 @@ restaurants = [
         "URL": "https://maps.app.goo.gl/euygQfEehAuftVMT8",
         "budget_min": 200,
         "budget_max": 400,
-        "flavor": "beef",
         "category": "taiwanese",
         "tags": ["牛排", "牛肉湯", "咖哩飯"],
     },
@@ -85,7 +80,3 @@ restaurants = [
 for r in restaurants:
     db.collection("restaurant_list").document(r["id"]).set(r)
 
-doc = db.collection("restaurant_list").document("r001").get()
-print(doc.to_dict())
-
-print(db.collection("restaurant_list").document("r002").get().to_dict())

@@ -5,11 +5,22 @@ def check_list_restaurants(db):
     docs = db.collection("restaurant_list").stream()
 
     rows = []
+    # for doc in docs:
+    #     r = doc.to_dict()
+    #     rows.append(
+    #         f"{r.get('nickname', doc.id)}｜{r.get('fullname', '-')}｜{r.get('category', '-')}"
+    #         f"｜${r.get('budget_min', '?')}-{r.get('budget_max', '?')}"
+    #     )
+
     for doc in docs:
         r = doc.to_dict()
         rows.append(
-            f"{r.get('nickname', doc.id)}｜{r.get('fullname', '-')}｜{r.get('category', '-')}"
-            f"｜${r.get('budget_min', '?')}-{r.get('budget_max', '?')}"
+            f'Nickname: {r.get("nickname", "-")}'
+            f'Fullname: {r.get("fullname", "-")}'
+            f'Category: {r.get("category", "-")}'
+            f'Last Visit: {r.get("last_visit_date", "-")}'
+            f'Budget: {r.get("budget_max", "-")}'
+            f'------'
         )
 
     if not rows:

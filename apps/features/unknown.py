@@ -5,10 +5,8 @@ from apps.features.self_introduction import self_introduction
 def unknown():
     
     text = '''
-    我不明白你在說什麼
-    
+    我只是一個虛擬的助理，不明白你想說什麼，請說得更明確一點
     --------------------
-
     '''
 
     introduction = self_introduction()

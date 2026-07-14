@@ -48,7 +48,7 @@ def detect_intent(text: str) -> str:
 - question_answering: 提出一般問題並期待答案
 - translation: 要求翻譯
 - english_practice: 要求進行英文口說練習
-- unknown: 其他情況或無法理解
+- unknown: 其他情況或無法理解使用者意圖
 
 使用者訊息：
 {text}
