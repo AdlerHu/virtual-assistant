@@ -4,47 +4,21 @@
 def check_list_restaurants(db):
     docs = db.collection("restaurant_list").stream()
 
-    FIELD_MAP = {
-        "nickname": "Nickname",
-        "fullname": "Fullname",
-        "category": "Category",
-        "last_visit_date": "Last Visit",
-        "URL": "URL",
-    }
-
-    fields = []
-
-    for key, display_name in FIELD_MAP.items():
-        value = r.get(key)
-
-        if value:
-            fields.append(f"{display_name}: {value}")
-
-    if r.get("budget_min") is not None or r.get("budget_max") is not None:
-        fields.append(
-            f"Budget: ${r.get('budget_min', '?')}-${r.get('budget_max', '?')}"
+    for doc in docs:
+        r = doc.to_dict()
+        rows.append(
+            f'Nickname: {r.get("nickname", "-")} \n'
+            f'Fullname: {r.get("fullname", "-")} \n'
+            f'Category: {r.get("category", "-")} \n'
+            f'Last Visit: {r.get("last_visit_date", "-")} \n'
+            f'Budget: {r.get("budget_max", "-")} \n'
+            f'------ \n'
         )
 
-    if r.get("tags"):
-        fields.append("Tags: " + ", ".join(r["tags"]))
+    if not rows:
+        return "目前沒有餐廳資料。"
 
-
-    # for doc in docs:
-    #     r = doc.to_dict()
-    #     rows.append(
-    #         f'Nickname: {r.get("nickname", "-")}'
-    #         f'Fullname: {r.get("fullname", "-")}'
-    #         f'Category: {r.get("category", "-")}'
-    #         f'Last Visit: {r.get("last_visit_date", "-")}'
-    #         f'Budget: {r.get("budget_max", "-")}'
-    #         f'------'
-    #     )
-
-    # if not rows:
-    #     return "目前沒有餐廳資料。"
-
-    # return "餐廳清單：\n\n" + "\n".join(rows)
-    return "餐廳清單：\n\n" + "\n".join(fields) + "\n\n"
+    return "餐廳清單：\n\n" + "\n".join(rows)
 
 
 def add_restaurant_list():
