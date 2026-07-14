@@ -4,6 +4,8 @@
 def check_list_restaurants(db):
     docs = db.collection("restaurant_list").stream()
 
+    rows = []
+
     for doc in docs:
         r = doc.to_dict()
         rows.append(
