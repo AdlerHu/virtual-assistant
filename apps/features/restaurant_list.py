@@ -14,7 +14,7 @@ def check_list_restaurants(db):
             f'Category: {r.get("category", "-")} \n'
             f'Last Visit: {r.get("last_visit_date", "-")} \n'
             f'Budget: {r.get("budget_max", "-")} \n'
-            f'------ \n'
+            f'------'
         )
 
     if not rows:
