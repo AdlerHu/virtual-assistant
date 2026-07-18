@@ -66,6 +66,8 @@ def router(intent: str):
     else:
         answer = unknown()
 
+    return answer
+
 
 def detect_intent(text: str) -> str:
     prompt = f"""
