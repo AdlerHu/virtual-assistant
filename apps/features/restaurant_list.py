@@ -1,4 +1,4 @@
-# 與口袋名單有關的功能放在這裡，包括對口袋名單查看、新增、修改、刪除，以及好手氣功能
+# 與口袋名單有關的功能放在這裡，包括對口袋名單查看、新增、修改、刪除、推薦以及好手氣功能
 
 
 def check_list_restaurants(db):
@@ -21,6 +21,9 @@ def check_list_restaurants(db):
         return "目前沒有餐廳資料。"
 
     return "餐廳清單：\n\n" + "\n".join(rows)
+
+def what_to_eat():
+    return '推薦功能建置中...'
 
 
 def add_restaurant_list():

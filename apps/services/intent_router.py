@@ -20,38 +20,75 @@ client = genai.Client(
 
 
 class Intent(str, Enum):
-    SELF_INTRODUCTION = "self_introduction"
-    CHECK_RESTAURANT_LIST = "check_restaurant_list"
-    ADD_RESTAURANT_LIST = "add_restaurant_list"
-    ALTER_RESTAURANT_LIST = "alter_restaurant_list"
-    DEL_RESTAURANT_LIST = "del_restaurant_list"
-    SURPRISE_ME = "surprise_me"
-    REMINDER = "reminder"
-    QUESTION_ANSWERING = "question_answering"
-    TRANSLATION = "translation"
-    ENGLISH_PRACTICE = "english_practice"
-    UNKNOWN = "unknown"
-
+    CHECK_RESTAURANT_LIST = 'check_restaurant_list'
+    WHAT_TO_EAT = 'what_to_eat'
+    SURPRISE_ME = 'surprise_me'
+    SELF_INTRODUCTION = 'self_introduction'
+    ADD_RESTAURANT_LIST = 'add_restaurant_list'
+    ALTER_RESTAURANT_LIST = 'alter_restaurant_list'
+    DEL_RESTAURANT_LIST = 'del_restaurant_list'
+    REMINDER = 'reminder'
+    QUESTION_ANSWERING = 'question_answering'
+    TRANSLLATION = 'translation'
+    ENGLISH_PRACTICE = 'english_practice'
+    UNKNOWN = 'unknown'
 
 def detect_intent(text: str) -> str:
     prompt = f"""
-你是 Telegram Bot 的意圖分類器。
+你是 Telegram Bot 的意圖分類器，用作使用者意圖的初步分類。
 
-分類規則：
-- self_introduction: 使用者想知道你有什麼功能
-- check_restaurant_list: 查看餐廳清單或口袋名單
-- add_restaurant_list: 新增餐廳至清單
-- alter_restaurant_list: 修改餐廳清單中的資料
-- del_restaurant_list: 刪除餐廳清單中的餐廳
-- surprise_me: 推薦一間不在既有清單中的餐廳
-- reminder: 要求在特定時間提醒某件事
-- question_answering: 提出一般問題並期待答案
-- translation: 要求翻譯
-- english_practice: 要求進行英文口說練習
-- unknown: 其他情況或無法理解使用者意圖
+只能回傳以下其中一個 intent：
+
+1. 使用者要求查看、列出名單，而沒有要求建議：
+  check_restaurant_list
+
+2. 使用者要求決定吃什麼、挑一家、選一家，且沒有明確要求名單以外的新店：
+  what_to_eat
+
+3. 使用者明確要求沒吃過、新店、名單外：
+  surprise_me
+
+4. 使用者想知道你是誰、有哪些功能、可以做什麼。
+  self_introduction
+
+5. 使用者想新增餐廳至餐廳名單。
+  add_restaurant_list
+
+6. 使用者想修改餐廳名單中既有餐廳的資料。
+  alter_restaurant_list
+
+7. 使用者想刪除餐廳名單中的餐廳。
+  del_restaurant_list
+
+8. 使用者要求在某個時間提醒他做某件事。
+  reminder
+
+9. 使用者提出一般知識或資訊問題，並期待直接回答。
+  例如:
+  「為什麼美國的首都不是紐約?」
+  「GCP提供哪些 non-container 的運算服務?」
+  question_answering
+
+10. 使用者要求翻譯文字、句子、文章或文件。
+  translation
+
+11. 使用者要求進行英文口說、對話、面試或其他英文練習。
+  english_practice
+
+12. 其他情況，或無法理解使用者的要求。
+  unknown
+
+判斷時請特別區分：
+
+1. 「讓我看餐廳名單」是 check_restaurant_list。
+2. 「中午吃什麼好呢?」是 what_to_eat。
+3. 「推薦一家名單以外的新餐廳」是 surprise_me。
+4. 如果使用者只說「推薦餐廳」，沒有明確說要新店或名單以外，預設判定為 what_to_eat。
 
 使用者訊息：
 {text}
+
+只回傳 intent，不要解釋，不要加入標點、Markdown 或其他文字。
 """
 
     response = client.models.generate_content(

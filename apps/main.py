@@ -43,6 +43,8 @@ def webhook():
 
     if intent == "self_introduction":
         answer = self_introduction()
+    elif intent == "what_to_eat":
+        answer = what_to_eat()
     elif intent == "check_restaurant_list":
         answer = check_list_restaurants(db)
     elif intent == "add_restaurant_list":
