@@ -40,35 +40,6 @@ class Intent(str, Enum):
     UNKNOWN = 'unknown'
 
 
-def router(intent: str):
-    if intent == "self_introduction":
-        answer = self_introduction()
-    elif intent == "what_to_eat":
-        answer = what_to_eat()
-    elif intent == "check_restaurant_list":
-        answer = check_list_restaurants(db)
-    elif intent == "add_restaurant_list":
-        answer = add_restaurant_list()
-    elif intent == "alter_restaurant_list":
-        answer = alter_restaurant_list()
-    elif intent == "del_restaurant_list":
-        answer = del_restaurant_list()
-    elif intent == "surprise_me":
-        answer = surprise_me()
-    elif intent == "reminder":
-        answer = reminder()
-    elif intent == 'question_answering':
-        answer = question_answering(question=text)
-    elif intent == 'translation':
-        answer = translation()
-    elif intent == 'english_practice':
-        answer = english_practice()
-    else:
-        answer = unknown()
-
-    return answer
-
-
 def detect_intent(text: str) -> str:
     prompt = f"""
 你是 Telegram Bot 的意圖分類器，用作使用者意圖的初步分類。
@@ -140,8 +111,41 @@ def detect_intent(text: str) -> str:
     intent = (response.text or "").strip()
 
     try:
-        return router(intent = Intent(intent).value)
+        return Intent(intent).value
 
     except ValueError:
         print(f"Unexpected intent response: {intent!r}")
         return Intent.UNKNOWN.value
+
+
+def intent_router(text: str):
+
+    intent = detect_intent(text)
+
+    if intent == "self_introduction":
+        answer = self_introduction()
+    elif intent == "what_to_eat":
+        answer = what_to_eat()
+    elif intent == "check_restaurant_list":
+        answer = check_list_restaurants(db)
+    elif intent == "add_restaurant_list":
+        answer = add_restaurant_list()
+    elif intent == "alter_restaurant_list":
+        answer = alter_restaurant_list()
+    elif intent == "del_restaurant_list":
+        answer = del_restaurant_list()
+    elif intent == "surprise_me":
+        answer = surprise_me()
+    elif intent == "reminder":
+        answer = reminder()
+    elif intent == 'question_answering':
+        answer = question_answering(question=text)
+    elif intent == 'translation':
+        answer = translation()
+    elif intent == 'english_practice':
+        answer = english_practice()
+    else:
+        answer = unknown()
+
+    return answer
+

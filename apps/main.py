@@ -1,7 +1,7 @@
 import os
 import requests
 from flask import Flask, request
-from apps.services.intent_router import detect_intent
+from apps.services.intent_router import intent_router
 
 
 app = Flask(__name__)
@@ -28,7 +28,7 @@ def webhook():
     chat_id = chat.get("id")
     text = message.get("text", "")
 
-    answer = detect_intent(text)
+    answer = intent_router(text)
 
     send_message(chat_id, answer)
     return "ok"
