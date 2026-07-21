@@ -1,7 +1,7 @@
 # 與口袋名單有關的功能放在這裡，包括對口袋名單查看、新增、修改、刪除、推薦以及好手氣功能
 
 
-def check_list_restaurants(db):
+def check_list_restaurants(text=None, db=None):
     docs = db.collection("restaurant_list").stream()
 
     rows = []
@@ -22,21 +22,21 @@ def check_list_restaurants(db):
 
     return "餐廳清單：\n\n" + "\n".join(rows)
 
-def what_to_eat():
+def what_to_eat(text=None, db=None):
     return '推薦功能建置中...'
 
 
-def add_restaurant_list():
+def add_restaurant_list(text=None, db=None):
     return '新增餐廳名單功能建置中...'
 
 
-def alter_restaurant_list():
+def alter_restaurant_list(text=None, db=None):
     return '修改餐廳名單功能建置中...'
 
 
-def del_restaurant_list():
+def del_restaurant_list(text=None, db=None):
     return '修改餐廳名單功能建置中...'
 
 
-def surprise_me():
+def surprise_me(text=None, db=None):
     return '好手氣功能建置中...'

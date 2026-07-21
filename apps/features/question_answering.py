@@ -12,13 +12,13 @@ client = genai.Client(
 )
 
 
-def question_answering(question: str) -> str:
+def question_answering(text=None, db=None) -> str:
 
     prompt = f"""
 請直接回答使用者的問題。
 
 問題：
-{question}
+{text}
 """
 
     response = client.models.generate_content(
