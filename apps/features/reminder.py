@@ -1,2 +1,2 @@
-def reminder(text=None, db=None):
+def reminder():
     return '提醒功能建置中...'

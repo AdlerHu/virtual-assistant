@@ -1,2 +1,2 @@
-def translation(text=None, db=None):
+def translation():
     return '翻譯功能建置中...'

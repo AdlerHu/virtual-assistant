@@ -1,2 +1,2 @@
-def english_practice(text=None, db=None):
+def english_practice():
     return '口說教練功能建置中...'

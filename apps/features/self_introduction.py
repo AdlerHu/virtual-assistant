@@ -1,4 +1,4 @@
-def self_introduction(text=None, db=None):
+def self_introduction():
     introduction = '''
 👋 我是 AdlerHu 創造的 AI 虛擬助理。
 

@@ -24,21 +24,6 @@ client = genai.Client(
     http_options=types.HttpOptions(api_version="v1"),
 )
 
-ROUTES = {
-    Intent.SELF_INTRODUCTION: self_introduction,
-    Intent.WHAT_TO_EAT: what_to_eat,
-    Intent.CHECK_RESTAURANT_LIST: check_list_restaurants,
-    Intent.ADD_RESTAURANT_LIST: add_restaurant_list,
-    Intent.ALTER_RESTAURANT_LIST: alter_restaurant_list,
-    Intent.DEL_RESTAURANT_LIST: del_restaurant_list,
-    Intent.SURPRISE_ME: surprise_me,
-    Intent.REMINDER: reminder,
-    Intent.QUESTION_ANSWERING: question_answering,
-    Intent.TRANSLATION: translation,
-    Intent.ENGLISH_PRACTICE: english_practice,
-    Intent.UNKNOWN: unknown,
-}
-
 
 class Intent(str, Enum):
     CHECK_RESTAURANT_LIST = 'check_restaurant_list'
@@ -53,6 +38,23 @@ class Intent(str, Enum):
     TRANSLATION = 'translation'
     ENGLISH_PRACTICE = 'english_practice'
     UNKNOWN = 'unknown'
+
+
+# ROUTES = {
+#     Intent.SELF_INTRODUCTION: self_introduction,
+#     Intent.WHAT_TO_EAT: what_to_eat,
+#     Intent.CHECK_RESTAURANT_LIST: check_list_restaurants,
+#     Intent.ADD_RESTAURANT_LIST: add_restaurant_list,
+#     Intent.ALTER_RESTAURANT_LIST: alter_restaurant_list,
+#     Intent.DEL_RESTAURANT_LIST: del_restaurant_list,
+#     Intent.SURPRISE_ME: surprise_me,
+#     Intent.REMINDER: reminder,
+#     Intent.QUESTION_ANSWERING: question_answering,
+#     Intent.TRANSLATION: translation,
+#     Intent.ENGLISH_PRACTICE: english_practice,
+#     Intent.UNKNOWN: unknown,
+# }
+
 
 def detect_intent(text: str) -> Intent:
     prompt = f"""
@@ -129,15 +131,27 @@ def detect_intent(text: str) -> Intent:
 
     except ValueError:
         print(f"Unexpected intent response: {intent!r}")
-        return Intent.UNKNOWN.value
+        return Intent.UNKNOWN
 
 
 def intent_router(text: str):
     intent = detect_intent(text)
 
-    handler = ROUTES.get(intent, unknown)
+    routes = {
+        Intent.SELF_INTRODUCTION: self_introduction,
+        Intent.WHAT_TO_EAT: what_to_eat,
+        Intent.CHECK_RESTAURANT_LIST: lambda: check_list_restaurants(db),
+        Intent.ADD_RESTAURANT_LIST: add_restaurant_list,
+        Intent.ALTER_RESTAURANT_LIST: alter_restaurant_list,
+        Intent.DEL_RESTAURANT_LIST: del_restaurant_list,
+        Intent.SURPRISE_ME: surprise_me,
+        Intent.REMINDER: reminder,
+        Intent.QUESTION_ANSWERING: lambda: question_answering(question=text),
+        Intent.TRANSLATION: translation,
+        Intent.ENGLISH_PRACTICE: english_practice,
+        Intent.UNKNOWN: unknown,
+    }
 
-    return handler(
-        text=text,
-        db=db,
-    )
+    handler = routes.get(intent, unknown)
+
+    return handler()
