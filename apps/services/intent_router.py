@@ -54,7 +54,7 @@ class Intent(str, Enum):
     ENGLISH_PRACTICE = 'english_practice'
     UNKNOWN = 'unknown'
 
-def detect_intent(text: str) -> str:
+def detect_intent(text: str) -> Intent:
     prompt = f"""
 你是 Telegram Bot 的意圖分類器，用作使用者意圖的初步分類。
 
