@@ -134,7 +134,7 @@ def detect_intent(text: str) -> Intent:
         return Intent.UNKNOWN
 
 
-def intent_router(text: str):
+def intent_router(text: str, chat_id: int):
     intent = detect_intent(text)
 
     routes = {
@@ -145,7 +145,7 @@ def intent_router(text: str):
         Intent.ALTER_RESTAURANT_LIST: alter_restaurant_list,
         Intent.DEL_RESTAURANT_LIST: del_restaurant_list,
         Intent.SURPRISE_ME: surprise_me,
-        Intent.REMINDER: reminder,
+        Intent.REMINDER: lambda: reminder(order=text, chat_id=chat_id),
         Intent.QUESTION_ANSWERING: lambda: question_answering(question=text),
         Intent.TRANSLATION: translation,
         Intent.ENGLISH_PRACTICE: english_practice,

@@ -3,3 +3,4 @@ requests
 gunicorn
 google-cloud-firestore
 google-genai
+google-cloud-tasks
