@@ -1,28 +1,26 @@
-import os
 from enum import Enum
-from google import genai
+
 from google.genai import types
 from google.cloud import firestore
+
+from apps.services.ai_agent import generate, Models
+
 from apps.features.self_introduction import self_introduction
-from apps.features.restaurant_list import what_to_eat, check_list_restaurants, add_restaurant_list, alter_restaurant_list, del_restaurant_list, surprise_me
+from apps.features.restaurant_list import (
+    what_to_eat,
+    check_list_restaurants,
+    add_restaurant_list,
+    alter_restaurant_list,
+    del_restaurant_list,
+    surprise_me,
+)
 from apps.features.reminder import reminder
 from apps.features.translation import translation
 from apps.features.english_practice import english_practice
 from apps.features.question_answering import question_answering
 from apps.features.unknown import unknown
 
-
-PROJECT_ID = os.environ["PROJECT_ID"]
 db = firestore.Client(project=PROJECT_ID)
-
-LOCATION = os.environ.get("LOCATION", "global")
-
-client = genai.Client(
-    vertexai=True,
-    project=PROJECT_ID,
-    location=LOCATION,
-    http_options=types.HttpOptions(api_version="v1"),
-)
 
 
 class Intent(str, Enum):
@@ -40,24 +38,8 @@ class Intent(str, Enum):
     UNKNOWN = 'unknown'
 
 
-# ROUTES = {
-#     Intent.SELF_INTRODUCTION: self_introduction,
-#     Intent.WHAT_TO_EAT: what_to_eat,
-#     Intent.CHECK_RESTAURANT_LIST: check_list_restaurants,
-#     Intent.ADD_RESTAURANT_LIST: add_restaurant_list,
-#     Intent.ALTER_RESTAURANT_LIST: alter_restaurant_list,
-#     Intent.DEL_RESTAURANT_LIST: del_restaurant_list,
-#     Intent.SURPRISE_ME: surprise_me,
-#     Intent.REMINDER: reminder,
-#     Intent.QUESTION_ANSWERING: question_answering,
-#     Intent.TRANSLATION: translation,
-#     Intent.ENGLISH_PRACTICE: english_practice,
-#     Intent.UNKNOWN: unknown,
-# }
-
-
 def detect_intent(text: str) -> Intent:
-    prompt = f"""
+  prompt = f"""
 你是 Telegram Bot 的意圖分類器，用作使用者意圖的初步分類。
 
 只能回傳以下其中一個 intent：
@@ -114,44 +96,45 @@ def detect_intent(text: str) -> Intent:
 只回傳 intent，不要解釋，不要加入標點、Markdown 或其他文字。
 """
 
-    response = client.models.generate_content(
-        model="gemini-2.5-flash",
-        contents=prompt,
-        config=types.GenerateContentConfig(
-            temperature=0,
-            response_mime_type="text/x.enum",
-            response_schema=Intent,
-        ),
-    )
+  response = generate(
+    model=Models.INTENT_ROUTER,
+    contents=prompt,
+    config=types.GenerateContentConfig(
+        temperature=0,
+        response_mime_type="text/x.enum",
+        response_schema=Intent,
+    ),
+  )
 
-    intent = (response.text or "").strip()
+  intent = (response.text or "").strip()
 
-    try:
-        return Intent(intent)
+  try:
+    return Intent(intent)
 
-    except ValueError:
-        print(f"Unexpected intent response: {intent!r}")
-        return Intent.UNKNOWN
+  except ValueError:
+    print(f"Unexpected intent response: {intent!r}")
+    return Intent.UNKNOWN
 
 
 def intent_router(text: str, chat_id: int):
-    intent = detect_intent(text)
+  intent = detect_intent(text)
 
-    routes = {
-        Intent.SELF_INTRODUCTION: self_introduction,
-        Intent.WHAT_TO_EAT: what_to_eat,
-        Intent.CHECK_RESTAURANT_LIST: lambda: check_list_restaurants(db),
-        Intent.ADD_RESTAURANT_LIST: add_restaurant_list,
-        Intent.ALTER_RESTAURANT_LIST: alter_restaurant_list,
-        Intent.DEL_RESTAURANT_LIST: del_restaurant_list,
-        Intent.SURPRISE_ME: surprise_me,
-        Intent.REMINDER: lambda: reminder(order=text, chat_id=chat_id),
-        Intent.QUESTION_ANSWERING: lambda: question_answering(question=text),
-        Intent.TRANSLATION: translation,
-        Intent.ENGLISH_PRACTICE: english_practice,
-        Intent.UNKNOWN: unknown,
-    }
+  routes = {
+    Intent.SELF_INTRODUCTION: self_introduction,
+    Intent.WHAT_TO_EAT: what_to_eat,
+    Intent.CHECK_RESTAURANT_LIST: lambda: check_list_restaurants(db),
+    Intent.ADD_RESTAURANT_LIST: add_restaurant_list,
+    Intent.ALTER_RESTAURANT_LIST: alter_restaurant_list,
+    Intent.DEL_RESTAURANT_LIST: del_restaurant_list,
+    Intent.SURPRISE_ME: surprise_me,
+    Intent.REMINDER: lambda: reminder(order=text, chat_id=chat_id),
+    Intent.QUESTION_ANSWERING: lambda: question_answering(question=text),
+    Intent.TRANSLATION: translation,
+    Intent.ENGLISH_PRACTICE: english_practice,
+    Intent.UNKNOWN: unknown,
+  }
 
-    handler = routes.get(intent, unknown)
+  handler = routes.get(intent, unknown)
 
-    return handler()
+  return handler()
+

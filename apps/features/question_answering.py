@@ -1,18 +1,8 @@
-from google import genai
-from google.genai import types
-import os
-
-PROJECT_ID = os.environ["PROJECT_ID"]
-
-client = genai.Client(
-    vertexai=True,
-    project=PROJECT_ID,
-    location="global",
-    http_options=types.HttpOptions(api_version="v1"),
-)
+from apps.services.ai_agent import client, Models
+from apps.services.ai_agent import generate, Models
 
 
-def question_answering(question=None) -> str:
+def question_answering(question: str) -> str:
 
     prompt = f"""
 請直接回答使用者的問題。
@@ -21,8 +11,8 @@ def question_answering(question=None) -> str:
 {question}
 """
 
-    response = client.models.generate_content(
-        model="gemini-2.5-flash",
+    response = generate(
+        model=Models.QUESTION_ANSWERING,
         contents=prompt,
     )
 

@@ -4,7 +4,7 @@ from zoneinfo import ZoneInfo
 from pydantic import BaseModel
 from google.genai import types
 
-from apps.config import client
+from apps.services.ai_agent import generate, Models
 
 
 class ReminderData(BaseModel):
@@ -46,13 +46,13 @@ reminder_text = 回信給 Agent
 scheduled_at = 明天日期的 10:00:00+08:00
 """
 
-    response = client.models.generate_content(
-        model="gemini-2.5-flash",
+    response = generate(
+        model=Models.REMINDER_PARSER,
         contents=prompt,
         config=types.GenerateContentConfig(
             temperature=0,
-            response_mime_type="application/json",
-            response_schema=ReminderData,
+            response_mime_type="text/x.enum",
+            response_schema=Intent,
         ),
     )
 
