@@ -51,8 +51,8 @@ scheduled_at = 明天日期的 10:00:00+08:00
         contents=prompt,
         config=types.GenerateContentConfig(
             temperature=0,
-            response_mime_type="text/x.enum",
-            response_schema=Intent,
+            response_mime_type="application/json",
+            response_schema=ReminderData,
         ),
     )
 
