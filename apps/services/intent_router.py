@@ -20,6 +20,7 @@ from apps.features.english_practice import english_practice
 from apps.features.question_answering import question_answering
 from apps.features.unknown import unknown
 
+PROJECT_ID = os.environ["PROJECT_ID"]
 db = firestore.Client(project=PROJECT_ID)
 
 
