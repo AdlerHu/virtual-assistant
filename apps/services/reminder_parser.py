@@ -56,7 +56,7 @@ scheduled_at = 明天日期的 10:00:00+08:00
         ),
     )
 
-    data = ReminderData.model_validate_json(response.order)
+    data = ReminderData.model_validate_json(response.text)
 
     scheduled_at = datetime.fromisoformat(
         data.scheduled_at
