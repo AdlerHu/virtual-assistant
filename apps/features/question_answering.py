@@ -1,4 +1,3 @@
-from apps.services.ai_agent import client, Models
 from apps.services.ai_agent import generate, Models
 
 
