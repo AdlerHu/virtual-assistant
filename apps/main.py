@@ -5,8 +5,7 @@ from typing import Any
 import requests
 from flask import Flask, jsonify, request
 
-from apps.intent_router import intent_router
-
+from apps.services.intent_router import intent_router
 
 app = Flask(__name__)
 
