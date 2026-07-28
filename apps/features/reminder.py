@@ -104,8 +104,8 @@ def _format_confirmation(
         lines.append(f"已建立 {len(created)} 筆提醒：")
 
         for index, item in enumerate(created, start=1):
-            event_at = item.event_at.strftime("%m/%d %H:%M")
-            notify_at = item.notify_at.strftime("%m/%d %H:%M")
+            event_at = item.event_at.strftime("%Y/%m/%d %H:%M")
+            notify_at = item.notify_at.strftime("%Y/%m/%d %H:%M")
 
             if item.event_at == item.notify_at:
                 lines.append(
