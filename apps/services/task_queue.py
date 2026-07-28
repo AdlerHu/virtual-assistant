@@ -1,50 +1,87 @@
 import json
 import os
+from datetime import datetime
 
 from google.cloud import tasks_v2
 from google.protobuf import timestamp_pb2
 
 
 PROJECT_ID = os.environ["PROJECT_ID"]
-LOCATION = "asia-east1"
-QUEUE = "reminder-queue"
-CLOUD_RUN_URL = os.environ["CLOUD_RUN_URL"]
+
+TASKS_LOCATION = os.environ.get(
+    "TASKS_LOCATION",
+    "asia-east1",
+)
+
+TASKS_QUEUE = os.environ.get(
+    "TASKS_QUEUE",
+    "reminder-queue",
+)
+
+CLOUD_RUN_URL = os.environ["CLOUD_RUN_URL"].rstrip("/")
+
+
+tasks_client = tasks_v2.CloudTasksClient()
 
 
 def create_reminder_task(
+    *,
     chat_id: int,
     reminder_text: str,
-    scheduled_at,
-):
-    client = tasks_v2.CloudTasksClient()
+    event_at: datetime,
+    notify_at: datetime,
+) -> str:
+    """
+    建立一筆 Cloud Task。
 
-    parent = client.queue_path(
+    Cloud Tasks 會在 notify_at 呼叫：
+    POST /tasks/send-reminder
+    """
+
+    if event_at.tzinfo is None:
+        raise ValueError(
+            "event_at 必須是包含時區的 datetime。"
+        )
+
+    if notify_at.tzinfo is None:
+        raise ValueError(
+            "notify_at 必須是包含時區的 datetime。"
+        )
+
+    parent = tasks_client.queue_path(
         PROJECT_ID,
-        LOCATION,
-        QUEUE,
+        TASKS_LOCATION,
+        TASKS_QUEUE,
     )
 
     payload = {
         "chat_id": chat_id,
         "reminder_text": reminder_text,
+        "event_at": event_at.isoformat(),
     }
 
-    timestamp = timestamp_pb2.Timestamp()
-    timestamp.FromDatetime(scheduled_at)
+    schedule_time = timestamp_pb2.Timestamp()
+    schedule_time.FromDatetime(notify_at)
 
     task = {
         "http_request": {
             "http_method": tasks_v2.HttpMethod.POST,
-            "url": f"{CLOUD_RUN_URL}/tasks/send-reminder",
+            "url": (
+                f"{CLOUD_RUN_URL}"
+                "/tasks/send-reminder"
+            ),
             "headers": {
                 "Content-Type": "application/json",
             },
-            "body": json.dumps(payload).encode(),
+            "body": json.dumps(
+                payload,
+                ensure_ascii=False,
+            ).encode("utf-8"),
         },
-        "schedule_time": timestamp,
+        "schedule_time": schedule_time,
     }
 
-    response = client.create_task(
+    response = tasks_client.create_task(
         request={
             "parent": parent,
             "task": task,

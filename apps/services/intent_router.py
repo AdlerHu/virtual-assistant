@@ -1,25 +1,24 @@
 import os
 from enum import Enum
 
-from google.genai import types
 from google.cloud import firestore
+from google.genai import types
 
-from apps.services.ai_agent import generate, Models
-
-from apps.features.self_introduction import self_introduction
-from apps.features.restaurant_list import (
-    what_to_eat,
-    check_list_restaurants,
-    add_restaurant_list,
-    alter_restaurant_list,
-    del_restaurant_list,
-    surprise_me,
-)
-from apps.features.reminder import reminder
-from apps.features.translation import translation
 from apps.features.english_practice import english_practice
 from apps.features.question_answering import question_answering
+from apps.features.reminder import reminder
+from apps.features.restaurant_list import (
+    add_restaurant_list,
+    alter_restaurant_list,
+    check_list_restaurants,
+    del_restaurant_list,
+    surprise_me,
+    what_to_eat,
+)
+from apps.features.self_introduction import self_introduction
+from apps.features.translation import translation
 from apps.features.unknown import unknown
+from apps.services.ai_agent import Models, generate
 
 PROJECT_ID = os.environ["PROJECT_ID"]
 db = firestore.Client(project=PROJECT_ID)

@@ -1,6 +1,7 @@
-flask
-requests
+Flask
 gunicorn
-google-cloud-firestore
+requests
+pydantic
 google-genai
+google-cloud-firestore
 google-cloud-tasks

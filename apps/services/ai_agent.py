@@ -5,7 +5,6 @@ import os
 from google import genai
 from google.genai import types
 
-
 PROJECT_ID = os.environ["PROJECT_ID"]
 LOCATION = os.environ.get("LOCATION", "global")
 
