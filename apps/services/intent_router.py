@@ -134,7 +134,7 @@ def intent_router(text: str, chat_id: int):
   routes = {
     Intent.SELF_INTRODUCTION: self_introduction,
     Intent.WHAT_TO_EAT: what_to_eat,
-    Intent.CHECK_RESTAURANT_LIST: lambda: check_list_restaurants(db),
+    Intent.CHECK_RESTAURANT_LIST: lambda: check_list_restaurants(db=db),
     Intent.ADD_RESTAURANT_LIST: add_restaurant_list,
     Intent.ALTER_RESTAURANT_LIST: alter_restaurant_list,
     Intent.DEL_RESTAURANT_LIST: del_restaurant_list,
