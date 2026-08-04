@@ -10,7 +10,7 @@ from apps.features.reminder import reminder
 from apps.features.restaurant_list import (
     add_restaurant_list,
     alter_restaurant_list,
-    check_restaurants_list,
+    check_restaurant_list,
     del_restaurant_list,
     surprise_me,
     what_to_eat,

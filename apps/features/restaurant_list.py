@@ -1,7 +1,7 @@
 # 與口袋名單有關的功能放在這裡，包括對口袋名單查看、新增、修改、刪除、推薦以及好手氣功能
 
 
-def check_restaurants_list(db):
+def check_restaurant_list(db):
     docs = db.collection("restaurant_list").stream()
 
     rows = []
