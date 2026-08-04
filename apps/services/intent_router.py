@@ -10,7 +10,7 @@ from apps.features.reminder import reminder
 from apps.features.restaurant_list import (
     add_restaurant_list,
     alter_restaurant_list,
-    check_list_restaurants,
+    check_restaurants_list,
     del_restaurant_list,
     surprise_me,
     what_to_eat,
@@ -134,7 +134,7 @@ def intent_router(text: str, chat_id: int):
   routes = {
     Intent.SELF_INTRODUCTION: self_introduction,
     Intent.WHAT_TO_EAT: what_to_eat,
-    Intent.CHECK_RESTAURANT_LIST: lambda: check_list_restaurants(db=db),
+    Intent.CHECK_RESTAURANT_LIST: lambda: check_restaurant_list(db=db),
     Intent.ADD_RESTAURANT_LIST: add_restaurant_list,
     Intent.ALTER_RESTAURANT_LIST: alter_restaurant_list,
     Intent.DEL_RESTAURANT_LIST: del_restaurant_list,
