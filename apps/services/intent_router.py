@@ -15,6 +15,7 @@ from apps.features.restaurant_list import (
     surprise_me,
     what_to_eat,
 )
+from apps.features.schedule import check_schedule
 from apps.features.self_introduction import self_introduction
 from apps.features.translation import translation
 from apps.features.unknown import unknown
@@ -33,6 +34,7 @@ class Intent(str, Enum):
     ALTER_RESTAURANT_LIST = 'alter_restaurant_list'
     DEL_RESTAURANT_LIST = 'del_restaurant_list'
     REMINDER = 'reminder'
+    CHECK_SCHEDULE = 'check_schedule'
     QUESTION_ANSWERING = 'question_answering'
     TRANSLATION = 'translation'
     ENGLISH_PRACTICE = 'english_practice'
@@ -69,19 +71,28 @@ def detect_intent(text: str) -> Intent:
 8. 使用者要求在某個時間提醒他做某件事。
   reminder
 
-9. 使用者提出一般知識或資訊問題，並期待直接回答。
+9. 使用者想查看已建立的行程或提醒：
+  check_schedule
+
+  例如：
+  「我今天有什麼行程？」
+  「明天安排了什麼？」
+  「我下午有什麼事？」
+  「我下午3點有沒有空檔？」
+  
+10. 使用者提出一般知識或資訊問題，並期待直接回答。
   例如:
   「為什麼美國的首都不是紐約?」
   「GCP提供哪些 non-container 的運算服務?」
   question_answering
 
-10. 使用者要求翻譯文字、句子、文章或文件。
+11. 使用者要求翻譯文字、句子、文章或文件。
   translation
 
-11. 使用者要求進行英文口說、對話、面試或其他英文練習。
+12. 使用者要求進行英文口說、對話、面試或其他英文練習。
   english_practice
 
-12. 其他情況，或無法理解使用者的要求。
+13. 其他情況，或無法理解使用者的要求。
   unknown
 
 判斷時請特別區分：
@@ -128,7 +139,8 @@ def intent_router(text: str, chat_id: int):
     Intent.ALTER_RESTAURANT_LIST: alter_restaurant_list,
     Intent.DEL_RESTAURANT_LIST: del_restaurant_list,
     Intent.SURPRISE_ME: surprise_me,
-    Intent.REMINDER: lambda: reminder(order=text, chat_id=chat_id),
+    Intent.REMINDER: lambda: reminder(order=text, chat_id=chat_id, db=db),
+    Intent.CHECK_SCHEDULE: lambda: check_schedule(order=text, chat_id=chat_id, db=db),
     Intent.QUESTION_ANSWERING: lambda: question_answering(question=text),
     Intent.TRANSLATION: translation,
     Intent.ENGLISH_PRACTICE: english_practice,

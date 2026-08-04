@@ -1,6 +1,8 @@
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
+from google.cloud import firestore
+
 from apps.services.reminder_parser import (
     ParsedReminder,
     ReminderParseError,
@@ -12,7 +14,7 @@ TIMEZONE = ZoneInfo("Asia/Taipei")
 MAX_REMINDERS_PER_REQUEST = 20
 
 
-def reminder(order: str, chat_id: int) -> str:
+def reminder(order: str, chat_id: int, db) -> str:
     """
     建立一筆或多筆提醒。
 
@@ -66,24 +68,31 @@ def reminder(order: str, chat_id: int) -> str:
 
     for item in valid_reminders:
         try:
-            create_reminder_task(
+            task_name = create_reminder_task(
                 chat_id=chat_id,
                 reminder_text=item.event_text,
                 event_at=item.event_at,
                 notify_at=item.notify_at,
             )
 
+            db.collection("reminders").add({
+                "chat_id": chat_id,
+                "event_text": item.event_text,
+                "event_at": item.event_at,
+                "notify_at": item.notify_at,
+                "status": "scheduled",
+                "task_name": task_name,
+                "created_at": firestore.SERVER_TIMESTAMP,
+            })
+
             created_reminders.append(item)
 
         except Exception as exc:
             print(
-                "Failed to create Cloud Task: "
+                "Failed to create reminder: "
                 f"event_text={item.event_text!r}, "
-                f"event_at={item.event_at.isoformat()}, "
-                f"notify_at={item.notify_at.isoformat()}, "
                 f"error={exc}"
             )
-
             failed_reminders.append(item)
 
     return _format_confirmation(
