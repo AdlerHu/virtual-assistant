@@ -4,7 +4,7 @@ from apps.services.schedule_parser import parse_schedule_range
 def check_schedule(
     order: str,
     chat_id: int,
-    db,
+    db
 ) -> str:
     start_at, end_at, label = parse_schedule_range(order)
 
