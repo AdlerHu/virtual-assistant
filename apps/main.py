@@ -7,6 +7,9 @@ from flask import Flask, jsonify, request
 
 from apps.services.intent_router import intent_router
 
+import traceback
+
+
 app = Flask(__name__)
 
 
@@ -77,6 +80,7 @@ def telegram_webhook():
             f"error={exc}"
         )
 
+        traceback.print_exc()
         answer = "處理訊息時發生錯誤，請稍後再試。"
 
     try:
