@@ -1,6 +1,3 @@
-from datetime import datetime
-from zoneinfo import ZoneInfo
-
 from google.cloud import firestore
 
 from apps.services.reminder_parser import (
@@ -9,8 +6,13 @@ from apps.services.reminder_parser import (
     parse_reminders,
 )
 from apps.services.task_queue import create_reminder_task
+from apps.services.time_service import (
+    get_user_timezone,
+    now_local,
+    format_local,
+)
 
-TIMEZONE = ZoneInfo("Asia/Taipei")
+
 MAX_REMINDERS_PER_REQUEST = 20
 
 
@@ -25,12 +27,23 @@ def reminder(order: str, chat_id: int, db) -> str:
         chat_id:
             Telegram chat ID。
 
+        db:
+            Firestore client。
+
     Returns:
         建立結果的 Telegram 回覆文字。
     """
 
+    timezone_name = get_user_timezone(
+        db=db,
+        chat_id=chat_id,
+    )
+
     try:
-        parsed_reminders = parse_reminders(order)
+        parsed_reminders = parse_reminders(
+            order=order,
+            timezone_name=timezone_name,
+        )
 
     except ReminderParseError as exc:
         print(f"Reminder parse error: {exc}")
@@ -46,7 +59,7 @@ def reminder(order: str, chat_id: int, db) -> str:
             f"{MAX_REMINDERS_PER_REQUEST} 筆提醒。"
         )
 
-    now = datetime.now(TIMEZONE)
+    now = now_local(timezone_name)
 
     valid_reminders: list[ParsedReminder] = []
     expired_reminders: list[ParsedReminder] = []
@@ -80,6 +93,7 @@ def reminder(order: str, chat_id: int, db) -> str:
                 "event_text": item.event_text,
                 "event_at": item.event_at,
                 "notify_at": item.notify_at,
+                "timezone": timezone_name,
                 "status": "scheduled",
                 "task_name": task_name,
                 "created_at": firestore.SERVER_TIMESTAMP,
@@ -93,12 +107,14 @@ def reminder(order: str, chat_id: int, db) -> str:
                 f"event_text={item.event_text!r}, "
                 f"error={exc}"
             )
+
             failed_reminders.append(item)
 
     return _format_confirmation(
         created=created_reminders,
         expired=expired_reminders,
         failed=failed_reminders,
+        timezone_name=timezone_name,
     )
 
 
@@ -106,6 +122,7 @@ def _format_confirmation(
     created: list[ParsedReminder],
     expired: list[ParsedReminder],
     failed: list[ParsedReminder],
+    timezone_name: str,
 ) -> str:
     lines: list[str] = []
 
@@ -113,8 +130,17 @@ def _format_confirmation(
         lines.append(f"已建立 {len(created)} 筆提醒：")
 
         for index, item in enumerate(created, start=1):
-            event_at = item.event_at.strftime("%Y/%m/%d %H:%M")
-            notify_at = item.notify_at.strftime("%Y/%m/%d %H:%M")
+            event_at = format_local(
+                item.event_at,
+                timezone_name=timezone_name,
+                fmt="%Y/%m/%d %H:%M",
+            )
+
+            notify_at = format_local(
+                item.notify_at,
+                timezone_name=timezone_name,
+                fmt="%Y/%m/%d %H:%M",
+            )
 
             if item.event_at == item.notify_at:
                 lines.append(

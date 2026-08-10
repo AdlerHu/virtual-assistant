@@ -1,13 +1,37 @@
 from datetime import datetime, time, timedelta
-from zoneinfo import ZoneInfo
+import re
 
-TIMEZONE = ZoneInfo("Asia/Taipei")
+from apps.services.time_service import (
+    get_timezone,
+    now_local,
+)
 
 
-def parse_schedule_range(order: str) -> tuple[datetime, datetime, str]:
-    now = datetime.now(TIMEZONE)
+def parse_schedule_range(
+    order: str,
+    timezone_name: str,
+) -> tuple[datetime, datetime, str]:
 
-    if "後天" in order:
+    timezone = get_timezone(timezone_name)
+    now = now_local(timezone_name)
+
+    date_match = re.search(
+        r"(\d{1,2})\s*月\s*(\d{1,2})\s*日",
+        order,
+    )
+
+    if date_match:
+        month = int(date_match.group(1))
+        day = int(date_match.group(2))
+
+        target_date = now.date().replace(
+            month=month,
+            day=day,
+        )
+
+        label = f"{month} 月 {day} 日"
+
+    elif "後天" in order:
         target_date = now.date() + timedelta(days=2)
         label = "後天"
 
@@ -22,7 +46,7 @@ def parse_schedule_range(order: str) -> tuple[datetime, datetime, str]:
     start_at = datetime.combine(
         target_date,
         time.min,
-        tzinfo=TIMEZONE,
+        tzinfo=timezone,
     )
 
     end_at = start_at + timedelta(days=1)

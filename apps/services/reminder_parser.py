@@ -1,13 +1,13 @@
 from datetime import datetime
-from zoneinfo import ZoneInfo
 
 from google.genai import types
 from pydantic import BaseModel, Field, ValidationError
 
 from apps.services.ai_agent import Models, generate
-
-TIMEZONE_NAME = "Asia/Taipei"
-TIMEZONE = ZoneInfo(TIMEZONE_NAME)
+from apps.services.time_service import (
+    get_timezone,
+    now_local,
+)
 
 
 class ParsedReminder(BaseModel):
@@ -33,7 +33,10 @@ class ReminderParseError(Exception):
     """提醒內容解析失敗。"""
 
 
-def parse_reminders(order: str) -> list[ParsedReminder]:
+def parse_reminders(
+    order: str,
+    timezone_name: str,
+) -> list[ParsedReminder]:
     """
     將自然語言解析成一筆或多筆提醒。
 
@@ -51,7 +54,14 @@ def parse_reminders(order: str) -> list[ParsedReminder]:
     if not order:
         raise ReminderParseError("提醒內容不能為空。")
 
-    now = datetime.now(TIMEZONE)
+    try:
+        timezone = get_timezone(timezone_name)
+    except Exception as exc:
+        raise ReminderParseError(
+            f"無效的時區：{timezone_name}"
+        ) from exc
+
+    now = now_local(timezone_name)
 
     prompt = f"""
 你是 Telegram 個人助理的提醒與行程解析器。
@@ -60,7 +70,10 @@ def parse_reminders(order: str) -> list[ParsedReminder]:
 {now.isoformat()}
 
 使用者時區：
-{TIMEZONE_NAME}
+{timezone_name}
+
+目前 UTC offset：
+{now.strftime("%z")}
 
 請將使用者訊息解析成一筆或多筆提醒。
 
@@ -95,13 +108,18 @@ def parse_reminders(order: str) -> list[ParsedReminder]:
 5. 如果沒有指定提前提醒時間，
    notify_at 必須等於 event_at。
 
-6. 一段訊息可能包含一筆或多筆行程。
+6. 如果使用者說：
+   「15 分鐘後提醒我做某事」
+   則 event_at 是目前時間加 15 分鐘，
+   notify_at 等於 event_at。
+
+7. 一段訊息可能包含一筆或多筆行程。
    不得遺漏任何一筆。
 
-7. 「明天」、「後天」、「下週一」等相對日期，
+8. 「明天」、「後天」、「下週一」等相對日期，
    必須根據目前時間換算成實際日期。
 
-8. 時間轉換：
+9. 時間轉換：
    - 上午 8 點 = 08:00
    - 上午 11 點 = 11:00
    - 中午 12 點 = 12:00
@@ -110,11 +128,13 @@ def parse_reminders(order: str) -> list[ParsedReminder]:
    - 下午 7 點半 = 19:30
    - 晚上 9 點 = 21:00
 
-9. event_at 和 notify_at 必須包含 +08:00 時區。
+10. event_at 和 notify_at 必須使用使用者目前時區
+    {timezone_name}
+    所對應的 UTC offset。
 
-10. 不得自行增加使用者沒有提到的事件。
+11. 不得自行增加使用者沒有提到的事件。
 
-11. 「買小蘇打、漂白水」是一筆事件，
+12. 「買小蘇打、漂白水」是一筆事件，
     不要因為頓號而拆成兩筆。
 
 使用者訊息：
@@ -132,6 +152,7 @@ def parse_reminders(order: str) -> list[ParsedReminder]:
                 response_schema=ParsedReminderList,
             ),
         )
+
     except Exception as exc:
         raise ReminderParseError(
             "呼叫 AI 解析提醒時發生錯誤。"
@@ -140,48 +161,77 @@ def parse_reminders(order: str) -> list[ParsedReminder]:
     response_text = (response.text or "").strip()
 
     if not response_text:
-        raise ReminderParseError("AI 沒有回傳提醒資料。")
+        raise ReminderParseError(
+            "AI 沒有回傳提醒資料。"
+        )
 
     try:
         parsed = ParsedReminderList.model_validate_json(
             response_text
         )
+
     except ValidationError as exc:
         raise ReminderParseError(
             "AI 回傳的提醒格式不正確。"
         ) from exc
 
     if not parsed.reminders:
-        raise ReminderParseError("沒有辨識到任何提醒。")
+        raise ReminderParseError(
+            "沒有辨識到任何提醒。"
+        )
 
     return [
-        _normalize_reminder(item)
+        _normalize_reminder(
+            reminder=item,
+            timezone_name=timezone_name,
+        )
         for item in parsed.reminders
     ]
 
 
 def _normalize_reminder(
     reminder: ParsedReminder,
+    timezone_name: str,
 ) -> ParsedReminder:
     event_text = reminder.event_text.strip()
 
     if not event_text:
-        raise ReminderParseError("提醒事項不能為空。")
+        raise ReminderParseError(
+            "提醒事項不能為空。"
+        )
 
     return ParsedReminder(
         event_text=event_text,
-        event_at=_ensure_timezone(reminder.event_at),
-        notify_at=_ensure_timezone(reminder.notify_at),
+        event_at=_ensure_timezone(
+            reminder.event_at,
+            timezone_name,
+        ),
+        notify_at=_ensure_timezone(
+            reminder.notify_at,
+            timezone_name,
+        ),
     )
 
 
-def _ensure_timezone(value: datetime) -> datetime:
+def _ensure_timezone(
+    value: datetime,
+    timezone_name: str,
+) -> datetime:
     """
-    Gemini 沒回傳時區時，預設為台灣時間。
-    有時區時則統一轉為台灣時間。
+    Gemini 沒有回傳 timezone 時，
+    視為使用者目前的 local time。
+
+    已包含 timezone 時，
+    轉成使用者目前 timezone。
     """
+
+    timezone = get_timezone(timezone_name)
 
     if value.tzinfo is None:
-        return value.replace(tzinfo=TIMEZONE)
+        return value.replace(
+            tzinfo=timezone
+        )
 
-    return value.astimezone(TIMEZONE)
+    return value.astimezone(
+        timezone
+    )
