@@ -4,6 +4,7 @@ from enum import Enum
 from google.cloud import firestore
 from google.genai import types
 
+from apps.features.alter_schedule import alter_schedule
 from apps.features.english_practice import english_practice
 from apps.features.question_answering import question_answering
 from apps.features.reminder import reminder
@@ -26,19 +27,22 @@ db = firestore.Client(project=PROJECT_ID)
 
 
 class Intent(str, Enum):
-    CHECK_RESTAURANT_LIST = 'check_restaurant_list'
-    WHAT_TO_EAT = 'what_to_eat'
-    SURPRISE_ME = 'surprise_me'
-    SELF_INTRODUCTION = 'self_introduction'
-    ADD_RESTAURANT_LIST = 'add_restaurant_list'
-    ALTER_RESTAURANT_LIST = 'alter_restaurant_list'
-    DEL_RESTAURANT_LIST = 'del_restaurant_list'
-    REMINDER = 'reminder'
-    CHECK_SCHEDULE = 'check_schedule'
-    QUESTION_ANSWERING = 'question_answering'
-    TRANSLATION = 'translation'
-    ENGLISH_PRACTICE = 'english_practice'
-    UNKNOWN = 'unknown'
+    CHECK_RESTAURANT_LIST = "check_restaurant_list"
+    WHAT_TO_EAT = "what_to_eat"
+    SURPRISE_ME = "surprise_me"
+    SELF_INTRODUCTION = "self_introduction"
+    ADD_RESTAURANT_LIST = "add_restaurant_list"
+    ALTER_RESTAURANT_LIST = "alter_restaurant_list"
+    DEL_RESTAURANT_LIST = "del_restaurant_list"
+
+    REMINDER = "reminder"
+    CHECK_SCHEDULE = "check_schedule"
+    ALTER_SCHEDULE = "alter_schedule"
+
+    QUESTION_ANSWERING = "question_answering"
+    TRANSLATION = "translation"
+    ENGLISH_PRACTICE = "english_practice"
+    UNKNOWN = "unknown"
 
 
 def detect_intent(text: str) -> Intent:
@@ -68,31 +72,60 @@ def detect_intent(text: str) -> Intent:
 7. 使用者想刪除餐廳名單中的餐廳。
   del_restaurant_list
 
-8. 使用者要求在某個時間提醒他做某件事。
-  reminder
+8. 使用者要求建立新的提醒或行程：
+   reminder
 
-9. 使用者想查看已建立的行程或提醒：
-  check_schedule
+例如：
+「明天上午10點提醒我回代理商」
+「今天下午2點開會，10分鐘前提醒我」
+「15分鐘後提醒我喝乳清蛋白」
+「明天預定行程如下，10分鐘前提醒我：...」
 
-  例如：
-  「我今天有什麼行程？」
-  「明天安排了什麼？」
-  「我下午有什麼事？」
-  「我下午3點有沒有空檔？」
+9. 使用者想查看已建立的行程、提醒或空檔：
+   check_schedule
+
+例如：
+「我今天有什麼行程？」
+「明天安排了什麼？」
+「我下午有什麼事？」
+「我下午3點有沒有空檔？」
+「8月15日有什麼行程？」
+
+10. 使用者想修改或取消已經存在的行程或提醒：
+    alter_schedule
+
+包括：
+- 取消既有行程
+- 更改既有行程的日期
+- 更改既有行程的時間
+- 將既有行程延後或提前
+- 修改既有行程的提醒設定
+
+例如：
+「技術部雙週會取消」
+「取消今天的技術部雙週會」
+「跟同事吃飯改明天同樣時間」
+「跟同事吃飯改到12點半」
+「明天的會議改到下午3點」
+「看牙醫延後一個小時」
+「技術部雙週會改成30分鐘前提醒我」
+
+只要使用者是在操作一個已經存在的行程，
+而不是建立新的行程，就判定為 alter_schedule。
   
-10. 使用者提出一般知識或資訊問題，並期待直接回答。
+11. 使用者提出一般知識或資訊問題，並期待直接回答。
   例如:
   「為什麼美國的首都不是紐約?」
   「GCP提供哪些 non-container 的運算服務?」
   question_answering
 
-11. 使用者要求翻譯文字、句子、文章或文件。
+12. 使用者要求翻譯文字、句子、文章或文件。
   translation
 
-12. 使用者要求進行英文口說、對話、面試或其他英文練習。
+13. 使用者要求進行英文口說、對話、面試或其他英文練習。
   english_practice
 
-13. 其他情況，或無法理解使用者的要求。
+14. 其他情況，或無法理解使用者的要求。
   unknown
 
 判斷時請特別區分：
@@ -101,6 +134,18 @@ def detect_intent(text: str) -> Intent:
 2. 「中午吃什麼好呢?」是 what_to_eat。
 3. 「推薦一家名單以外的新餐廳」是 surprise_me。
 4. 如果使用者只說「推薦餐廳」，沒有明確說要新店或名單以外，預設判定為 what_to_eat。
+5. 「明天11點提醒我技術部雙週會」是 reminder，
+   因為使用者正在建立新的行程。
+
+6. 「技術部雙週會取消」是 alter_schedule，
+   因為使用者正在操作既有行程。
+
+7. 「跟同事吃飯改明天同樣時間」是 alter_schedule。
+
+8. 「跟同事吃飯改到12點半」是 alter_schedule。
+
+9. 「我明天有什麼行程？」是 check_schedule，
+   因為使用者只是在查看行程，沒有修改。v
 
 使用者訊息：
 {text}
@@ -141,6 +186,7 @@ def intent_router(text: str, chat_id: int):
     Intent.SURPRISE_ME: surprise_me,
     Intent.REMINDER: lambda: reminder(order=text, chat_id=chat_id, db=db),
     Intent.CHECK_SCHEDULE: lambda: check_schedule(order=text, chat_id=chat_id, db=db),
+    Intent.ALTER_SCHEDULE: lambda: alter_schedule(order=text, chat_id=chat_id,db=db),
     Intent.QUESTION_ANSWERING: lambda: question_answering(question=text),
     Intent.TRANSLATION: translation,
     Intent.ENGLISH_PRACTICE: english_practice,
