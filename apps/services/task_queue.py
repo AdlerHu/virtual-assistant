@@ -2,9 +2,9 @@ import json
 import os
 from datetime import datetime
 
+from google.api_core.exceptions import NotFound
 from google.cloud import tasks_v2
 from google.protobuf import timestamp_pb2
-
 
 PROJECT_ID = os.environ["PROJECT_ID"]
 
@@ -22,6 +22,30 @@ CLOUD_RUN_URL = os.environ["CLOUD_RUN_URL"].rstrip("/")
 
 
 tasks_client = tasks_v2.CloudTasksClient()
+
+
+def delete_reminder_task(
+    task_name: str,
+) -> None:
+    """
+    刪除既有的 Cloud Task。
+
+    如果 task 已經不存在，
+    視為已經成功刪除。
+    """
+
+    if not task_name:
+        return
+
+    try:
+        tasks_client.delete_task(
+            name=task_name
+        )
+
+    except NotFound:
+        # Task 可能已經執行完畢，
+        # 或先前已被刪除。
+        pass
 
 
 def create_reminder_task(

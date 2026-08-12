@@ -21,6 +21,7 @@ class Models:
     INTENT_ROUTER = "gemini-2.5-flash"
     QUESTION_ANSWERING = "gemini-2.5-flash"
     REMINDER_PARSER = "gemini-2.5-flash"
+    SCHEDULE_ALTER_PARSER = "gemini-2.5-flash"
     TRANSLATION = "gemini-2.5-flash"
     ENGLISH_PRACTICE = "gemini-2.5-flash"
 
