@@ -6,7 +6,8 @@ from google.api_core.exceptions import NotFound
 from google.cloud import tasks_v2
 from google.protobuf import timestamp_pb2
 
-PROJECT_ID = os.environ["PROJECT_ID"]
+# PROJECT_ID = os.environ["PROJECT_ID"]
+PROJECT_ID = 'skills-building-413521'
 
 TASKS_LOCATION = os.environ.get(
     "TASKS_LOCATION",
@@ -15,11 +16,11 @@ TASKS_LOCATION = os.environ.get(
 
 TASKS_QUEUE = os.environ.get(
     "TASKS_QUEUE",
-    "reminder-queue",
+    "remind-queue",
 )
 
-CLOUD_RUN_URL = os.environ["CLOUD_RUN_URL"].rstrip("/")
-
+# CLOUD_RUN_URL = os.environ["CLOUD_RUN_URL"].rstrip("/")
+CLOUD_RUN_URL = 'https://virtual-assistant-418613909560.asia-east1.run.app'
 
 tasks_client = tasks_v2.CloudTasksClient()
 
