@@ -1,19 +1,29 @@
 import os
+import traceback
 from datetime import datetime
 from typing import Any
 
 import requests
 from flask import Flask, jsonify, request
+from google.cloud import firestore
 
+from apps.features.lck import sync_lck_reminders
 from apps.services.intent_router import intent_router
-
-import traceback
-
 
 app = Flask(__name__)
 
 
 BOT_TOKEN = os.environ["BOT_TOKEN"]
+
+PROJECT_ID = os.environ["PROJECT_ID"]
+
+TELEGRAM_CHAT_ID = int(
+    os.environ["TELEGRAM_CHAT_ID"]
+)
+
+db = firestore.Client(
+    project=PROJECT_ID
+)
 
 TELEGRAM_API_BASE_URL = (
     f"https://api.telegram.org/bot{BOT_TOKEN}"
@@ -170,6 +180,34 @@ def send_reminder_task():
         ), 500
 
     return jsonify({"status": "sent"}), 200
+
+
+@app.post("/tasks/sync-lck")
+def sync_lck():
+    try:
+        result = sync_lck_reminders(
+            db=db,
+            chat_id=TELEGRAM_CHAT_ID,
+        )
+
+        print(
+            f"LCK sync completed: {result}"
+        )
+
+        return jsonify({
+            "status": "ok",
+            **result,
+        }), 200
+
+    except Exception as exc:
+        print(
+            f"LCK sync failed: {exc}"
+        )
+
+        return jsonify({
+            "status": "error",
+            "error": str(exc),
+        }), 500
 
 
 def send_message(chat_id: int, text: str) -> None:

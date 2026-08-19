@@ -109,6 +109,9 @@ def sync_lck_reminders(
                 "team1": team1,
                 "team2": team2,
 
+                "team1_slug": match["team1"]["slug"],
+                "team2_slug": match["team2"]["slug"],
+
                 "event_text": event_text,
 
                 "event_at": event_at,
@@ -250,7 +253,7 @@ def get_lck_matches(db) -> list[dict]:
 
         matches.append({
             "match_id": event.get("matchId"),
-
+            "tournament_id": event.get("tournamentId"),
             "start_time": start_time,
 
             "team1": {
