@@ -94,7 +94,10 @@ def parse_reminders(
 
 2. 如果使用者說：
    「明天上午 10 點提醒我回信」
-   則 event_at 和 notify_at 都是明天上午 10 點。
+   而沒有指定提前多久提醒，
+   則：
+   event_at = 明天上午 10 點
+   notify_at = 明天上午 9 點 45 分。
 
 3. 如果使用者說：
    「明天下午 2 點開會，15 分鐘前提醒我」
@@ -106,12 +109,16 @@ def parse_reminders(
    則所有行程都必須提前 15 分鐘提醒。
 
 5. 如果沒有指定提前提醒時間，
-   notify_at 必須等於 event_at。
+   notify_at 預設為 event_at 的 15 分鐘前。
 
 6. 如果使用者說：
    「15 分鐘後提醒我做某事」
-   則 event_at 是目前時間加 15 分鐘，
-   notify_at 等於 event_at。
+   則這裡的「15 分鐘後」是在指定事件時間，
+   不是「提前 15 分鐘提醒」。
+
+   因此：
+   event_at = 現在時間 + 15 分鐘
+   notify_at = event_at
 
 7. 一段訊息可能包含一筆或多筆行程。
    不得遺漏任何一筆。
