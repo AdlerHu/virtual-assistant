@@ -11,11 +11,8 @@ from google.cloud import firestore
 from apps.services.task_queue import create_reminder_task
 
 
-# CITO_API_KEY = os.environ["CITO_API_KEY"]
-CITO_API_KEY = 'cito_e7699482b552dd538f427b7b363fa11589950c16828081baf7ef5fbad7922870'
-
+CITO_API_KEY = os.environ["CITO_API_KEY"]
 CITO_API_BASE_URL = "https://api.citoapi.com/api/v1"
-
 TIMEZONE = ZoneInfo("Asia/Taipei")
 
 LCK_MAIN_TEAM_SLUGS = {

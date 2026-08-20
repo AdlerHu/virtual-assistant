@@ -19,8 +19,7 @@ TASKS_QUEUE = os.environ.get(
     "remind-queue",
 )
 
-# CLOUD_RUN_URL = os.environ["CLOUD_RUN_URL"].rstrip("/")
-CLOUD_RUN_URL = 'https://virtual-assistant-418613909560.asia-east1.run.app'
+CLOUD_RUN_URL = os.environ["CLOUD_RUN_URL"].rstrip("/")
 
 tasks_client = tasks_v2.CloudTasksClient()
 
