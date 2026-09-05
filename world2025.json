@@ -1,0 +1,1585 @@
+{
+    "success": true,
+    "data": {
+        "leagueId": "lol-worlds",
+        "leagueName": "Worlds",
+        "total": 41,
+        "count": 41,
+        "limit": 100,
+        "offset": 0,
+        "hasMore": false,
+        "nextOffset": null,
+        "events": [
+            {
+                "startTime": "2025-11-09T07:00:00.000Z",
+                "state": "completed",
+                "type": "match",
+                "blockName": "Finals",
+                "matchId": "lol-match-113475871524050783",
+                "tournamentId": "lol-worlds_2025",
+                "teams": [
+                    {
+                        "slug": "kt",
+                        "name": "kt Rolster",
+                        "code": "KT",
+                        "imageUrl": "http://static.lolesports.com/teams/kt_darkbackground.png",
+                        "score": 2,
+                        "outcome": "loss"
+                    },
+                    {
+                        "slug": "t1",
+                        "name": "T1",
+                        "code": "T1",
+                        "imageUrl": "http://static.lolesports.com/teams/1726801573959_539px-T1_2019_full_allmode.png",
+                        "score": 3,
+                        "outcome": "win"
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 5
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 5,
+                    "expectedGames": 5,
+                    "gamesReady": true,
+                    "playerStatsReady": true
+                }
+            },
+            {
+                "startTime": "2025-11-02T07:00:00.000Z",
+                "state": "completed",
+                "type": "match",
+                "blockName": "Semifinals",
+                "matchId": "lol-match-113475871523985235",
+                "tournamentId": "lol-worlds_2025",
+                "teams": [
+                    {
+                        "slug": "t1",
+                        "name": "T1",
+                        "code": "T1",
+                        "imageUrl": "http://static.lolesports.com/teams/1726801573959_539px-T1_2019_full_allmode.png",
+                        "score": 3,
+                        "outcome": "win"
+                    },
+                    {
+                        "slug": "tes",
+                        "name": "TOP ESPORTS",
+                        "code": "TES",
+                        "imageUrl": "http://static.lolesports.com/teams/1592592064571_TopEsportsTES-01-FullonDark.png",
+                        "score": 0,
+                        "outcome": "loss"
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 5
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 2,
+                    "expectedGames": 3,
+                    "gamesReady": true,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2025-11-01T07:00:00.000Z",
+                "state": "completed",
+                "type": "match",
+                "blockName": "Semifinals",
+                "matchId": "lol-match-113475871523985241",
+                "tournamentId": "lol-worlds_2025",
+                "teams": [
+                    {
+                        "slug": "gen",
+                        "name": "Gen.G Esports",
+                        "code": "GEN",
+                        "imageUrl": "http://static.lolesports.com/teams/1773829250929_GENGLOGO_GOLD.png",
+                        "score": 1,
+                        "outcome": "loss"
+                    },
+                    {
+                        "slug": "kt",
+                        "name": "kt Rolster",
+                        "code": "KT",
+                        "imageUrl": "http://static.lolesports.com/teams/kt_darkbackground.png",
+                        "score": 3,
+                        "outcome": "win"
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 5
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 3,
+                    "expectedGames": 4,
+                    "gamesReady": true,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2025-10-31T07:00:00.000Z",
+                "state": "completed",
+                "type": "match",
+                "blockName": "Quarterfinals",
+                "matchId": "lol-match-113475871523985211",
+                "tournamentId": "lol-worlds_2025",
+                "teams": [
+                    {
+                        "slug": "al",
+                        "name": "Anyone's Legend",
+                        "code": "AL",
+                        "imageUrl": "http://static.lolesports.com/teams/1641199582689_.png",
+                        "score": 0,
+                        "outcome": "loss"
+                    },
+                    {
+                        "slug": "t1",
+                        "name": "T1",
+                        "code": "T1",
+                        "imageUrl": "http://static.lolesports.com/teams/1726801573959_539px-T1_2019_full_allmode.png",
+                        "score": 3,
+                        "outcome": "win"
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 5
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 3,
+                    "expectedGames": 3,
+                    "gamesReady": true,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2025-10-30T07:00:00.000Z",
+                "state": "completed",
+                "type": "match",
+                "blockName": "Quarterfinals",
+                "matchId": "lol-match-113475871523985217",
+                "tournamentId": "lol-worlds_2025",
+                "teams": [
+                    {
+                        "slug": "tes",
+                        "name": "TOP ESPORTS",
+                        "code": "TES",
+                        "imageUrl": "http://static.lolesports.com/teams/1592592064571_TopEsportsTES-01-FullonDark.png",
+                        "score": 3,
+                        "outcome": "win"
+                    },
+                    {
+                        "slug": "g2",
+                        "name": "G2 Esports",
+                        "code": "G2",
+                        "imageUrl": "http://static.lolesports.com/teams/G2-FullonDark.png",
+                        "score": 1,
+                        "outcome": "loss"
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 5
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 4,
+                    "expectedGames": 4,
+                    "gamesReady": true,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2025-10-29T07:00:00.000Z",
+                "state": "completed",
+                "type": "match",
+                "blockName": "Quarterfinals",
+                "matchId": "lol-match-113475871523985229",
+                "tournamentId": "lol-worlds_2025",
+                "teams": [
+                    {
+                        "slug": "kt",
+                        "name": "kt Rolster",
+                        "code": "KT",
+                        "imageUrl": "http://static.lolesports.com/teams/kt_darkbackground.png",
+                        "score": 3,
+                        "outcome": "win"
+                    },
+                    {
+                        "slug": "cfo",
+                        "name": "CTBC Flying Oyster",
+                        "code": "CFO",
+                        "imageUrl": "http://static.lolesports.com/teams/1656307849320_CFO_Logo.png",
+                        "score": 0,
+                        "outcome": "loss"
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 5
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 2,
+                    "expectedGames": 3,
+                    "gamesReady": true,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2025-10-28T07:00:00.000Z",
+                "state": "completed",
+                "type": "match",
+                "blockName": "Quarterfinals",
+                "matchId": "lol-match-113475871523985223",
+                "tournamentId": "lol-worlds_2025",
+                "teams": [
+                    {
+                        "slug": "gen",
+                        "name": "Gen.G Esports",
+                        "code": "GEN",
+                        "imageUrl": "http://static.lolesports.com/teams/1773829250929_GENGLOGO_GOLD.png",
+                        "score": 3,
+                        "outcome": "win"
+                    },
+                    {
+                        "slug": "hle",
+                        "name": "Hanwha Life Esports",
+                        "code": "HLE",
+                        "imageUrl": "http://static.lolesports.com/teams/1631819564399_hle-2021-worlds.png",
+                        "score": 0,
+                        "outcome": "loss"
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 5
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 3,
+                    "expectedGames": 3,
+                    "gamesReady": true,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2025-10-25T11:00:00.000Z",
+                "state": "completed",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-113475798006664658",
+                "tournamentId": "lol-worlds_2025",
+                "teams": [
+                    {
+                        "slug": "mkoi",
+                        "name": "Movistar KOI",
+                        "code": "MKOI",
+                        "imageUrl": "http://static.lolesports.com/teams/1734012609283_MKOI_FullColor_Blue.png",
+                        "score": 0,
+                        "outcome": "loss"
+                    },
+                    {
+                        "slug": "t1",
+                        "name": "T1",
+                        "code": "T1",
+                        "imageUrl": "http://static.lolesports.com/teams/1726801573959_539px-T1_2019_full_allmode.png",
+                        "score": 2,
+                        "outcome": "win"
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 3
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 2,
+                    "expectedGames": 2,
+                    "gamesReady": true,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2025-10-25T08:00:00.000Z",
+                "state": "completed",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-113475798006664654",
+                "tournamentId": "lol-worlds_2025",
+                "teams": [
+                    {
+                        "slug": "tes",
+                        "name": "TOP ESPORTS",
+                        "code": "TES",
+                        "imageUrl": "http://static.lolesports.com/teams/1592592064571_TopEsportsTES-01-FullonDark.png",
+                        "score": 2,
+                        "outcome": "win"
+                    },
+                    {
+                        "slug": "blg",
+                        "name": "BILIBILI GAMING",
+                        "code": "BLG",
+                        "imageUrl": "http://static.lolesports.com/teams/1682322954525_Bilibili_Gaming_logo_20211.png",
+                        "score": 1,
+                        "outcome": "loss"
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 3
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 2,
+                    "expectedGames": 3,
+                    "gamesReady": true,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2025-10-25T05:00:00.000Z",
+                "state": "completed",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-113475798006664650",
+                "tournamentId": "lol-worlds_2025",
+                "teams": [
+                    {
+                        "slug": "cfo",
+                        "name": "CTBC Flying Oyster",
+                        "code": "CFO",
+                        "imageUrl": "http://static.lolesports.com/teams/1656307849320_CFO_Logo.png",
+                        "score": 2,
+                        "outcome": "win"
+                    },
+                    {
+                        "slug": "fly",
+                        "name": "FlyQuest",
+                        "code": "FLY",
+                        "imageUrl": "http://static.lolesports.com/teams/flyquest-new-on-dark.png",
+                        "score": 0,
+                        "outcome": "loss"
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 3
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 2,
+                    "expectedGames": 2,
+                    "gamesReady": true,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2025-10-24T11:00:00.000Z",
+                "state": "completed",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-113475798006664646",
+                "tournamentId": "lol-worlds_2025",
+                "teams": [
+                    {
+                        "slug": "100t",
+                        "name": "Thieves",
+                        "code": "100T",
+                        "imageUrl": "http://static.lolesports.com/teams/1631819887423_100t-2021-worlds.png",
+                        "score": 0,
+                        "outcome": "loss"
+                    },
+                    {
+                        "slug": "t1",
+                        "name": "T1",
+                        "code": "T1",
+                        "imageUrl": "http://static.lolesports.com/teams/1726801573959_539px-T1_2019_full_allmode.png",
+                        "score": 2,
+                        "outcome": "win"
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 3
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 2,
+                    "expectedGames": 2,
+                    "gamesReady": true,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2025-10-24T08:00:00.000Z",
+                "state": "completed",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-113475798006664642",
+                "tournamentId": "lol-worlds_2025",
+                "teams": [
+                    {
+                        "slug": "blg",
+                        "name": "BILIBILI GAMING",
+                        "code": "BLG",
+                        "imageUrl": "http://static.lolesports.com/teams/1682322954525_Bilibili_Gaming_logo_20211.png",
+                        "score": 0,
+                        "outcome": "loss"
+                    },
+                    {
+                        "slug": "vivo-keyd-stars-academy",
+                        "name": "Vivo Keyd Stars Academy",
+                        "code": "VKS",
+                        "imageUrl": "http://static.lolesports.com/teams/1774200249450_vks_c.png",
+                        "score": 2,
+                        "outcome": "win"
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 3
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 1,
+                    "expectedGames": 2,
+                    "gamesReady": true,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2025-10-23T11:00:00.000Z",
+                "state": "completed",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-113475798006664634",
+                "tournamentId": "lol-worlds_2025",
+                "teams": [
+                    {
+                        "slug": "gen",
+                        "name": "Gen.G Esports",
+                        "code": "GEN",
+                        "imageUrl": "http://static.lolesports.com/teams/1773829250929_GENGLOGO_GOLD.png",
+                        "score": 2,
+                        "outcome": "win"
+                    },
+                    {
+                        "slug": "tes",
+                        "name": "TOP ESPORTS",
+                        "code": "TES",
+                        "imageUrl": "http://static.lolesports.com/teams/1592592064571_TopEsportsTES-01-FullonDark.png",
+                        "score": 0,
+                        "outcome": "loss"
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 3
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 2,
+                    "expectedGames": 2,
+                    "gamesReady": true,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2025-10-23T08:00:00.000Z",
+                "state": "completed",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-113475798006664638",
+                "tournamentId": "lol-worlds_2025",
+                "teams": [
+                    {
+                        "slug": "mkoi",
+                        "name": "Movistar KOI",
+                        "code": "MKOI",
+                        "imageUrl": "http://static.lolesports.com/teams/1734012609283_MKOI_FullColor_Blue.png",
+                        "score": 0,
+                        "outcome": "loss"
+                    },
+                    {
+                        "slug": "tsw",
+                        "name": "Team Secret Whales",
+                        "code": "TSW",
+                        "imageUrl": "http://static.lolesports.com/teams/1774598000328_White_EyeText_600p.png",
+                        "score": 2,
+                        "outcome": "win"
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 3
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 2,
+                    "expectedGames": 2,
+                    "gamesReady": true,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2025-10-22T11:00:00.000Z",
+                "state": "completed",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-113475798006664630",
+                "tournamentId": "lol-worlds_2025",
+                "teams": [
+                    {
+                        "slug": "fly",
+                        "name": "FlyQuest",
+                        "code": "FLY",
+                        "imageUrl": "http://static.lolesports.com/teams/flyquest-new-on-dark.png",
+                        "score": 1,
+                        "outcome": "loss"
+                    },
+                    {
+                        "slug": "g2",
+                        "name": "G2 Esports",
+                        "code": "G2",
+                        "imageUrl": "http://static.lolesports.com/teams/G2-FullonDark.png",
+                        "score": 2,
+                        "outcome": "win"
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 3
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 1,
+                    "expectedGames": 3,
+                    "gamesReady": true,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2025-10-22T08:00:00.000Z",
+                "state": "completed",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-113475798006664626",
+                "tournamentId": "lol-worlds_2025",
+                "teams": [
+                    {
+                        "slug": "cfo",
+                        "name": "CTBC Flying Oyster",
+                        "code": "CFO",
+                        "imageUrl": "http://static.lolesports.com/teams/1656307849320_CFO_Logo.png",
+                        "score": 0,
+                        "outcome": "loss"
+                    },
+                    {
+                        "slug": "hle",
+                        "name": "Hanwha Life Esports",
+                        "code": "HLE",
+                        "imageUrl": "http://static.lolesports.com/teams/1631819564399_hle-2021-worlds.png",
+                        "score": 2,
+                        "outcome": "win"
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 3
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 2,
+                    "expectedGames": 2,
+                    "gamesReady": true,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2025-10-19T11:00:00.000Z",
+                "state": "completed",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-113475798006664622",
+                "tournamentId": "lol-worlds_2025",
+                "teams": [
+                    {
+                        "slug": "psg",
+                        "name": "PSG Talon",
+                        "code": "PSG",
+                        "imageUrl": "http://static.lolesports.com/teams/1752559016251_PSG_TALON_COLOR.png",
+                        "score": 2,
+                        "outcome": "win"
+                    },
+                    {
+                        "slug": "vivo-keyd-stars-academy",
+                        "name": "Vivo Keyd Stars Academy",
+                        "code": "VKS",
+                        "imageUrl": "http://static.lolesports.com/teams/1774200249450_vks_c.png",
+                        "score": 1,
+                        "outcome": "loss"
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 3
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 1,
+                    "expectedGames": 3,
+                    "gamesReady": true,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2025-10-19T08:00:00.000Z",
+                "state": "completed",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-113475798006664618",
+                "tournamentId": "lol-worlds_2025",
+                "teams": [
+                    {
+                        "slug": "mkoi",
+                        "name": "Movistar KOI",
+                        "code": "MKOI",
+                        "imageUrl": "http://static.lolesports.com/teams/1734012609283_MKOI_FullColor_Blue.png",
+                        "score": 2,
+                        "outcome": "win"
+                    },
+                    {
+                        "slug": "fnc",
+                        "name": "Fnatic",
+                        "code": "FNC",
+                        "imageUrl": "http://static.lolesports.com/teams/1631819669150_fnc-2021-worlds.png",
+                        "score": 1,
+                        "outcome": "loss"
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 3
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 1,
+                    "expectedGames": 3,
+                    "gamesReady": true,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2025-10-18T11:00:00.000Z",
+                "state": "completed",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-113475798006664616",
+                "tournamentId": "lol-worlds_2025",
+                "teams": [
+                    {
+                        "slug": "hle",
+                        "name": "Hanwha Life Esports",
+                        "code": "HLE",
+                        "imageUrl": "http://static.lolesports.com/teams/1631819564399_hle-2021-worlds.png",
+                        "score": 1,
+                        "outcome": "win"
+                    },
+                    {
+                        "slug": "100t",
+                        "name": "Thieves",
+                        "code": "100T",
+                        "imageUrl": "http://static.lolesports.com/teams/1631819887423_100t-2021-worlds.png",
+                        "score": 0,
+                        "outcome": "loss"
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 1
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 1,
+                    "expectedGames": 1,
+                    "gamesReady": true,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2025-10-18T10:00:00.000Z",
+                "state": "completed",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-113475798006664614",
+                "tournamentId": "lol-worlds_2025",
+                "teams": [
+                    {
+                        "slug": "blg",
+                        "name": "BILIBILI GAMING",
+                        "code": "BLG",
+                        "imageUrl": "http://static.lolesports.com/teams/1682322954525_Bilibili_Gaming_logo_20211.png",
+                        "score": 0,
+                        "outcome": "loss"
+                    },
+                    {
+                        "slug": "g2",
+                        "name": "G2 Esports",
+                        "code": "G2",
+                        "imageUrl": "http://static.lolesports.com/teams/G2-FullonDark.png",
+                        "score": 1,
+                        "outcome": "win"
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 1
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 1,
+                    "expectedGames": 1,
+                    "gamesReady": true,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2025-10-18T09:00:00.000Z",
+                "state": "completed",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-113475798006664612",
+                "tournamentId": "lol-worlds_2025",
+                "teams": [
+                    {
+                        "slug": "gen",
+                        "name": "Gen.G Esports",
+                        "code": "GEN",
+                        "imageUrl": "http://static.lolesports.com/teams/1773829250929_GENGLOGO_GOLD.png",
+                        "score": 1,
+                        "outcome": "win"
+                    },
+                    {
+                        "slug": "t1",
+                        "name": "T1",
+                        "code": "T1",
+                        "imageUrl": "http://static.lolesports.com/teams/1726801573959_539px-T1_2019_full_allmode.png",
+                        "score": 0,
+                        "outcome": "loss"
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 1
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 1,
+                    "expectedGames": 1,
+                    "gamesReady": true,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2025-10-18T08:00:00.000Z",
+                "state": "completed",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-113475798006664610",
+                "tournamentId": "lol-worlds_2025",
+                "teams": [
+                    {
+                        "slug": "fly",
+                        "name": "FlyQuest",
+                        "code": "FLY",
+                        "imageUrl": "http://static.lolesports.com/teams/flyquest-new-on-dark.png",
+                        "score": 1,
+                        "outcome": "win"
+                    },
+                    {
+                        "slug": "tsw",
+                        "name": "Team Secret Whales",
+                        "code": "TSW",
+                        "imageUrl": "http://static.lolesports.com/teams/1774598000328_White_EyeText_600p.png",
+                        "score": 0,
+                        "outcome": "loss"
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 1
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 1,
+                    "expectedGames": 1,
+                    "gamesReady": true,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2025-10-17T11:00:00.000Z",
+                "state": "completed",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-113475798006664606",
+                "tournamentId": "lol-worlds_2025",
+                "teams": [
+                    {
+                        "slug": "cfo",
+                        "name": "CTBC Flying Oyster",
+                        "code": "CFO",
+                        "imageUrl": "http://static.lolesports.com/teams/1656307849320_CFO_Logo.png",
+                        "score": 1,
+                        "outcome": "loss"
+                    },
+                    {
+                        "slug": "al",
+                        "name": "Anyone's Legend",
+                        "code": "AL",
+                        "imageUrl": "http://static.lolesports.com/teams/1641199582689_.png",
+                        "score": 2,
+                        "outcome": "win"
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 3
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 2,
+                    "expectedGames": 3,
+                    "gamesReady": true,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2025-10-17T08:00:00.000Z",
+                "state": "completed",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-113475798006664602",
+                "tournamentId": "lol-worlds_2025",
+                "teams": [
+                    {
+                        "slug": "kt",
+                        "name": "kt Rolster",
+                        "code": "KT",
+                        "imageUrl": "http://static.lolesports.com/teams/kt_darkbackground.png",
+                        "score": 2,
+                        "outcome": "win"
+                    },
+                    {
+                        "slug": "tes",
+                        "name": "TOP ESPORTS",
+                        "code": "TES",
+                        "imageUrl": "http://static.lolesports.com/teams/1592592064571_TopEsportsTES-01-FullonDark.png",
+                        "score": 0,
+                        "outcome": "loss"
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 3
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 2,
+                    "expectedGames": 2,
+                    "gamesReady": true,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2025-10-16T12:00:00.000Z",
+                "state": "completed",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-113475798006664600",
+                "tournamentId": "lol-worlds_2025",
+                "teams": [
+                    {
+                        "slug": "hle",
+                        "name": "Hanwha Life Esports",
+                        "code": "HLE",
+                        "imageUrl": "http://static.lolesports.com/teams/1631819564399_hle-2021-worlds.png",
+                        "score": 1,
+                        "outcome": "win"
+                    },
+                    {
+                        "slug": "psg",
+                        "name": "PSG Talon",
+                        "code": "PSG",
+                        "imageUrl": "http://static.lolesports.com/teams/1752559016251_PSG_TALON_COLOR.png",
+                        "score": 0,
+                        "outcome": "loss"
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 1
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 1,
+                    "expectedGames": 1,
+                    "gamesReady": true,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2025-10-16T11:00:00.000Z",
+                "state": "completed",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-113475798006664598",
+                "tournamentId": "lol-worlds_2025",
+                "teams": [
+                    {
+                        "slug": "blg",
+                        "name": "BILIBILI GAMING",
+                        "code": "BLG",
+                        "imageUrl": "http://static.lolesports.com/teams/1682322954525_Bilibili_Gaming_logo_20211.png",
+                        "score": 1,
+                        "outcome": "win"
+                    },
+                    {
+                        "slug": "fnc",
+                        "name": "Fnatic",
+                        "code": "FNC",
+                        "imageUrl": "http://static.lolesports.com/teams/1631819669150_fnc-2021-worlds.png",
+                        "score": 0,
+                        "outcome": "loss"
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 1
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 1,
+                    "expectedGames": 1,
+                    "gamesReady": true,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2025-10-16T10:00:00.000Z",
+                "state": "completed",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-113475798006664592",
+                "tournamentId": "lol-worlds_2025",
+                "teams": [
+                    {
+                        "slug": "gen",
+                        "name": "Gen.G Esports",
+                        "code": "GEN",
+                        "imageUrl": "http://static.lolesports.com/teams/1773829250929_GENGLOGO_GOLD.png",
+                        "score": 0,
+                        "outcome": "loss"
+                    },
+                    {
+                        "slug": "al",
+                        "name": "Anyone's Legend",
+                        "code": "AL",
+                        "imageUrl": "http://static.lolesports.com/teams/1641199582689_.png",
+                        "score": 1,
+                        "outcome": "win"
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 1
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 1,
+                    "expectedGames": 1,
+                    "gamesReady": true,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2025-10-16T09:00:00.000Z",
+                "state": "completed",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-113475798006664590",
+                "tournamentId": "lol-worlds_2025",
+                "teams": [
+                    {
+                        "slug": "cfo",
+                        "name": "CTBC Flying Oyster",
+                        "code": "CFO",
+                        "imageUrl": "http://static.lolesports.com/teams/1656307849320_CFO_Logo.png",
+                        "score": 1,
+                        "outcome": "win"
+                    },
+                    {
+                        "slug": "t1",
+                        "name": "T1",
+                        "code": "T1",
+                        "imageUrl": "http://static.lolesports.com/teams/1726801573959_539px-T1_2019_full_allmode.png",
+                        "score": 0,
+                        "outcome": "loss"
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 1
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 1,
+                    "expectedGames": 1,
+                    "gamesReady": true,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2025-10-16T08:00:00.000Z",
+                "state": "completed",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-113475798006664588",
+                "tournamentId": "lol-worlds_2025",
+                "teams": [
+                    {
+                        "slug": "tes",
+                        "name": "TOP ESPORTS",
+                        "code": "TES",
+                        "imageUrl": "http://static.lolesports.com/teams/1592592064571_TopEsportsTES-01-FullonDark.png",
+                        "score": 1,
+                        "outcome": "win"
+                    },
+                    {
+                        "slug": "100t",
+                        "name": "Thieves",
+                        "code": "100T",
+                        "imageUrl": "http://static.lolesports.com/teams/1631819887423_100t-2021-worlds.png",
+                        "score": 0,
+                        "outcome": "loss"
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 1
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 1,
+                    "expectedGames": 1,
+                    "gamesReady": true,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2025-10-16T07:00:00.000Z",
+                "state": "completed",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-113475798006664596",
+                "tournamentId": "lol-worlds_2025",
+                "teams": [
+                    {
+                        "slug": "mkoi",
+                        "name": "Movistar KOI",
+                        "code": "MKOI",
+                        "imageUrl": "http://static.lolesports.com/teams/1734012609283_MKOI_FullColor_Blue.png",
+                        "score": 0,
+                        "outcome": "loss"
+                    },
+                    {
+                        "slug": "g2",
+                        "name": "G2 Esports",
+                        "code": "G2",
+                        "imageUrl": "http://static.lolesports.com/teams/G2-FullonDark.png",
+                        "score": 1,
+                        "outcome": "win"
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 1
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 1,
+                    "expectedGames": 1,
+                    "gamesReady": true,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2025-10-16T06:00:00.000Z",
+                "state": "completed",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-113475798006664586",
+                "tournamentId": "lol-worlds_2025",
+                "teams": [
+                    {
+                        "slug": "kt",
+                        "name": "kt Rolster",
+                        "code": "KT",
+                        "imageUrl": "http://static.lolesports.com/teams/kt_darkbackground.png",
+                        "score": 1,
+                        "outcome": "win"
+                    },
+                    {
+                        "slug": "tsw",
+                        "name": "Team Secret Whales",
+                        "code": "TSW",
+                        "imageUrl": "http://static.lolesports.com/teams/1774598000328_White_EyeText_600p.png",
+                        "score": 0,
+                        "outcome": "loss"
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 1
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 1,
+                    "expectedGames": 1,
+                    "gamesReady": true,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2025-10-16T05:00:00.000Z",
+                "state": "completed",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-113475798006664594",
+                "tournamentId": "lol-worlds_2025",
+                "teams": [
+                    {
+                        "slug": "vivo-keyd-stars-academy",
+                        "name": "Vivo Keyd Stars Academy",
+                        "code": "VKS",
+                        "imageUrl": "http://static.lolesports.com/teams/1774200249450_vks_c.png",
+                        "score": 0,
+                        "outcome": "loss"
+                    },
+                    {
+                        "slug": "fly",
+                        "name": "FlyQuest",
+                        "code": "FLY",
+                        "imageUrl": "http://static.lolesports.com/teams/flyquest-new-on-dark.png",
+                        "score": 1,
+                        "outcome": "win"
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 1
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 1,
+                    "expectedGames": 1,
+                    "gamesReady": true,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2025-10-15T12:00:00.000Z",
+                "state": "completed",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-113475798006664584",
+                "tournamentId": "lol-worlds_2025",
+                "teams": [
+                    {
+                        "slug": "gen",
+                        "name": "Gen.G Esports",
+                        "code": "GEN",
+                        "imageUrl": "http://static.lolesports.com/teams/1773829250929_GENGLOGO_GOLD.png",
+                        "score": 1,
+                        "outcome": "win"
+                    },
+                    {
+                        "slug": "psg",
+                        "name": "PSG Talon",
+                        "code": "PSG",
+                        "imageUrl": "http://static.lolesports.com/teams/1752559016251_PSG_TALON_COLOR.png",
+                        "score": 0,
+                        "outcome": "loss"
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 1
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 1,
+                    "expectedGames": 1,
+                    "gamesReady": true,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2025-10-15T11:00:00.000Z",
+                "state": "completed",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-113475798006664582",
+                "tournamentId": "lol-worlds_2025",
+                "teams": [
+                    {
+                        "slug": "g2",
+                        "name": "G2 Esports",
+                        "code": "G2",
+                        "imageUrl": "http://static.lolesports.com/teams/G2-FullonDark.png",
+                        "score": 0,
+                        "outcome": "loss"
+                    },
+                    {
+                        "slug": "tes",
+                        "name": "TOP ESPORTS",
+                        "code": "TES",
+                        "imageUrl": "http://static.lolesports.com/teams/1592592064571_TopEsportsTES-01-FullonDark.png",
+                        "score": 1,
+                        "outcome": "win"
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 1
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 1,
+                    "expectedGames": 1,
+                    "gamesReady": true,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2025-10-15T10:00:00.000Z",
+                "state": "completed",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-113475798006664580",
+                "tournamentId": "lol-worlds_2025",
+                "teams": [
+                    {
+                        "slug": "hle",
+                        "name": "Hanwha Life Esports",
+                        "code": "HLE",
+                        "imageUrl": "http://static.lolesports.com/teams/1631819564399_hle-2021-worlds.png",
+                        "score": 0,
+                        "outcome": "loss"
+                    },
+                    {
+                        "slug": "al",
+                        "name": "Anyone's Legend",
+                        "code": "AL",
+                        "imageUrl": "http://static.lolesports.com/teams/1641199582689_.png",
+                        "score": 1,
+                        "outcome": "win"
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 1
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 1,
+                    "expectedGames": 1,
+                    "gamesReady": true,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2025-10-15T09:00:00.000Z",
+                "state": "completed",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-113475798006664578",
+                "tournamentId": "lol-worlds_2025",
+                "teams": [
+                    {
+                        "slug": "fly",
+                        "name": "FlyQuest",
+                        "code": "FLY",
+                        "imageUrl": "http://static.lolesports.com/teams/flyquest-new-on-dark.png",
+                        "score": 0,
+                        "outcome": "loss"
+                    },
+                    {
+                        "slug": "t1",
+                        "name": "T1",
+                        "code": "T1",
+                        "imageUrl": "http://static.lolesports.com/teams/1726801573959_539px-T1_2019_full_allmode.png",
+                        "score": 1,
+                        "outcome": "win"
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 1
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 1,
+                    "expectedGames": 1,
+                    "gamesReady": true,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2025-10-15T08:00:00.000Z",
+                "state": "completed",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-113475798006664576",
+                "tournamentId": "lol-worlds_2025",
+                "teams": [
+                    {
+                        "slug": "blg",
+                        "name": "BILIBILI GAMING",
+                        "code": "BLG",
+                        "imageUrl": "http://static.lolesports.com/teams/1682322954525_Bilibili_Gaming_logo_20211.png",
+                        "score": 0,
+                        "outcome": "loss"
+                    },
+                    {
+                        "slug": "100t",
+                        "name": "Thieves",
+                        "code": "100T",
+                        "imageUrl": "http://static.lolesports.com/teams/1631819887423_100t-2021-worlds.png",
+                        "score": 1,
+                        "outcome": "win"
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 1
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 1,
+                    "expectedGames": 1,
+                    "gamesReady": true,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2025-10-15T07:00:00.000Z",
+                "state": "completed",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-113475798006664574",
+                "tournamentId": "lol-worlds_2025",
+                "teams": [
+                    {
+                        "slug": "kt",
+                        "name": "kt Rolster",
+                        "code": "KT",
+                        "imageUrl": "http://static.lolesports.com/teams/kt_darkbackground.png",
+                        "score": 1,
+                        "outcome": "win"
+                    },
+                    {
+                        "slug": "mkoi",
+                        "name": "Movistar KOI",
+                        "code": "MKOI",
+                        "imageUrl": "http://static.lolesports.com/teams/1734012609283_MKOI_FullColor_Blue.png",
+                        "score": 0,
+                        "outcome": "loss"
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 1
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 1,
+                    "expectedGames": 1,
+                    "gamesReady": true,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2025-10-15T06:00:00.000Z",
+                "state": "completed",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-113475798006664572",
+                "tournamentId": "lol-worlds_2025",
+                "teams": [
+                    {
+                        "slug": "cfo",
+                        "name": "CTBC Flying Oyster",
+                        "code": "CFO",
+                        "imageUrl": "http://static.lolesports.com/teams/1656307849320_CFO_Logo.png",
+                        "score": 1,
+                        "outcome": "win"
+                    },
+                    {
+                        "slug": "fnc",
+                        "name": "Fnatic",
+                        "code": "FNC",
+                        "imageUrl": "http://static.lolesports.com/teams/1631819669150_fnc-2021-worlds.png",
+                        "score": 0,
+                        "outcome": "loss"
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 1
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 1,
+                    "expectedGames": 1,
+                    "gamesReady": true,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2025-10-15T05:00:00.000Z",
+                "state": "completed",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-113475798006599034",
+                "tournamentId": "lol-worlds_2025",
+                "teams": [
+                    {
+                        "slug": "tsw",
+                        "name": "Team Secret Whales",
+                        "code": "TSW",
+                        "imageUrl": "http://static.lolesports.com/teams/1774598000328_White_EyeText_600p.png",
+                        "score": 1,
+                        "outcome": "win"
+                    },
+                    {
+                        "slug": "vivo-keyd-stars-academy",
+                        "name": "Vivo Keyd Stars Academy",
+                        "code": "VKS",
+                        "imageUrl": "http://static.lolesports.com/teams/1774200249450_vks_c.png",
+                        "score": 0,
+                        "outcome": "loss"
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 1
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 1,
+                    "expectedGames": 1,
+                    "gamesReady": true,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2025-10-14T08:00:00.000Z",
+                "state": "completed",
+                "type": "match",
+                "blockName": "Play In Knockouts",
+                "matchId": "lol-match-113475493522079909",
+                "tournamentId": "lol-worlds_2025",
+                "teams": [
+                    {
+                        "slug": "ig",
+                        "name": "Invictus Gaming",
+                        "code": "IG",
+                        "imageUrl": "http://static.lolesports.com/teams/1634762917340_300px-Invictus_Gaming_logo.png",
+                        "score": 1,
+                        "outcome": "loss"
+                    },
+                    {
+                        "slug": "t1",
+                        "name": "T1",
+                        "code": "T1",
+                        "imageUrl": "http://static.lolesports.com/teams/1726801573959_539px-T1_2019_full_allmode.png",
+                        "score": 3,
+                        "outcome": "win"
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 5
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 1,
+                    "expectedGames": 4,
+                    "gamesReady": true,
+                    "playerStatsReady": false
+                }
+            }
+        ],
+        "pages": {},
+        "pagination": {
+            "mode": "offset",
+            "limit": 100,
+            "offset": 0,
+            "nextOffset": null,
+            "usage": "Pass offset + limit query params to fetch the next page, e.g. ?state=completed&from=2026-04-01&to=2026-05-31&offset=50&limit=50"
+        },
+        "meta": {
+            "defaultScope": "explicit_filters",
+            "source": "db"
+        }
+    }
+}
