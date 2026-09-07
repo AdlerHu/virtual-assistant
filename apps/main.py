@@ -8,11 +8,10 @@ from flask import Flask, jsonify, request
 from google.cloud import firestore
 
 from apps.features.lck import sync_lck_reminders
-from apps.services.intent_router import intent_router
-
-from apps.features.worlds import (
+from apps.features.lol_worlds import (
     sync_worlds_reminders,
 )
+from apps.services.intent_router import intent_router
 
 app = Flask(__name__)
 

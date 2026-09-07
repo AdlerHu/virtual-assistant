@@ -12,7 +12,6 @@ CITO_API_KEY = os.environ["CITO_API_KEY"]
 CITO_API_BASE_URL = "https://api.citoapi.com/api/v1"
 TIMEZONE = ZoneInfo("Asia/Taipei")
 
-# HLE、KT、DK、BFX
 
 ALWAYS_WATCH_BLOCKS = {
     "Semifinals",
