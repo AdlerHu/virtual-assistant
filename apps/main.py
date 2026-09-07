@@ -10,6 +10,10 @@ from google.cloud import firestore
 from apps.features.lck import sync_lck_reminders
 from apps.services.intent_router import intent_router
 
+from apps.features.worlds import (
+    sync_worlds_reminders,
+)
+
 app = Flask(__name__)
 
 
@@ -208,6 +212,29 @@ def sync_lck():
             "status": "error",
             "error": str(exc),
         }), 500
+
+
+@app.post("/tasks/sync-worlds")
+def sync_worlds():
+    try:
+        result = (
+            sync_worlds_reminders(
+                db=db,
+                chat_id=TELEGRAM_CHAT_ID,
+            )
+        )
+
+        return result, 200
+
+    except Exception as exc:
+        print(
+            "Worlds sync failed:",
+            exc,
+        )
+
+        return {
+            "error": str(exc),
+        }, 500
 
 
 def send_message(chat_id: int, text: str) -> None:
