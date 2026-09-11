@@ -10,6 +10,7 @@ from google.cloud import firestore
 
 from apps.services.task_queue import create_reminder_task
 
+# 無關緊要的更新，測試 CI/CD Pipeline
 
 CITO_API_KEY = os.environ["CITO_API_KEY"]
 CITO_API_BASE_URL = "https://api.citoapi.com/api/v1"
@@ -26,6 +27,7 @@ LCK_MAIN_TEAM_SLUGS = {
     "bro",
     "krx"
 }
+
 
 def sync_lck_reminders(
     db,
