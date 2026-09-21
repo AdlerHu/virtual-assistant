@@ -1,16 +1,11 @@
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 
 import requests
-
-from datetime import timedelta
-
 from google.cloud import firestore
 
 from apps.services.task_queue import create_reminder_task
-
-# 無關緊要的更新，測試 CI/CD Pipeline
 
 CITO_API_KEY = os.environ["CITO_API_KEY"]
 CITO_API_BASE_URL = "https://api.citoapi.com/api/v1"
