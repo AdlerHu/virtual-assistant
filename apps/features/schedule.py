@@ -1,9 +1,12 @@
+from datetime import datetime, timedelta
+
 from apps.services.schedule_parser import (
     parse_schedule_range,
 )
 from apps.services.time_service import (
-    get_user_timezone,
     format_local,
+    get_user_timezone,
+    now_local,
 )
 
 
@@ -13,7 +16,7 @@ def check_schedule(
     db,
 ) -> str:
     """
-    查詢指定日期或日期範圍內的行程。
+    根據自然語言查詢指定日期或日期範圍內的行程。
     """
 
     timezone_name = get_user_timezone(
@@ -31,6 +34,65 @@ def check_schedule(
 
     except ValueError as exc:
         return str(exc)
+
+    return get_schedules(
+        start_at=start_at,
+        end_at=end_at,
+        label=label,
+        chat_id=chat_id,
+        db=db,
+        timezone_name=timezone_name,
+    )
+
+
+def get_today_schedule(
+    chat_id: int,
+    db,
+) -> str:
+    """
+    查詢使用者今天的行程。
+    不經過自然語言 parser。
+    """
+
+    timezone_name = get_user_timezone(
+        db=db,
+        chat_id=chat_id,
+    )
+
+    now = now_local(timezone_name)
+
+    start_at = now.replace(
+        hour=0,
+        minute=0,
+        second=0,
+        microsecond=0,
+    )
+
+    end_at = start_at + timedelta(
+        days=1,
+    )
+
+    return get_schedules(
+        start_at=start_at,
+        end_at=end_at,
+        label="今天",
+        chat_id=chat_id,
+        db=db,
+        timezone_name=timezone_name,
+    )
+
+
+def get_schedules(
+    start_at: datetime,
+    end_at: datetime,
+    label: str,
+    chat_id: int,
+    db,
+    timezone_name: str,
+) -> str:
+    """
+    查詢指定時間範圍內的行程。
+    """
 
     docs = (
         db.collection("reminders")
@@ -101,7 +163,6 @@ def check_schedule(
         f"{len(schedules)} 個行程："
     ]
 
-    # 判斷是不是跨多日查詢
     is_multi_day = (
         end_at.date()
         - start_at.date()

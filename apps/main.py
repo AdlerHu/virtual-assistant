@@ -7,6 +7,8 @@ import requests
 from flask import Flask, jsonify, request
 from google.cloud import firestore
 
+from apps.features.daily_briefing import daily_briefing
+
 from apps.features.lck import sync_lck_reminders
 from apps.features.lol_worlds import (
     sync_worlds_reminders,
@@ -237,6 +239,37 @@ def sync_worlds():
         }, 500
 
 
+@app.post("/tasks/daily-briefing")
+def run_daily_briefing():
+    message = daily_briefing(
+        chat_id=TELEGRAM_CHAT_ID,
+        db=db,
+    )
+
+    send_message(
+        TELEGRAM_CHAT_ID,
+        message,
+    )
+
+    return "", 200
+
+
+@app.post("/tasks/check-telegram-webhook")
+def check_telegram_webhook_task():
+    result = check_telegram_webhook()
+
+    if not result["healthy"]:
+        send_message(
+            "Telegram webhook 異常\n\n"
+            f"Expected: {result['expected_url']}\n"
+            f"Actual: {result['actual_url'] or '(empty)'}\n"
+            f"Pending: {result['pending_update_count']}\n"
+            f"Error: {result['last_error_message'] or 'None'}"
+        )
+
+    return result, 200
+
+
 def send_message(chat_id: int, text: str) -> None:
     """
     使用 Telegram Bot API 傳送文字訊息。
@@ -277,22 +310,6 @@ def _format_event_time(
         return None
 
     return event_at.strftime("%m/%d %H:%M")
-
-
-@app.post("/tasks/check-telegram-webhook")
-def check_telegram_webhook_task():
-    result = check_telegram_webhook()
-
-    if not result["healthy"]:
-        send_message(
-            "Telegram webhook 異常\n\n"
-            f"Expected: {result['expected_url']}\n"
-            f"Actual: {result['actual_url'] or '(empty)'}\n"
-            f"Pending: {result['pending_update_count']}\n"
-            f"Error: {result['last_error_message'] or 'None'}"
-        )
-
-    return result, 200
 
 
 if __name__ == "__main__":
