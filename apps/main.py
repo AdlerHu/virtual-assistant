@@ -14,7 +14,6 @@ from apps.features.lol_worlds import (
     sync_worlds_reminders,
 )
 from apps.services.intent_router import intent_router
-from apps.services.watchdog import check_telegram_webhook
 
 app = Flask(__name__)
 
@@ -252,22 +251,6 @@ def run_daily_briefing():
     )
 
     return "", 200
-
-
-@app.post("/tasks/check-telegram-webhook")
-def check_telegram_webhook_task():
-    result = check_telegram_webhook()
-
-    if not result["healthy"]:
-        send_message(
-            "Telegram webhook 異常\n\n"
-            f"Expected: {result['expected_url']}\n"
-            f"Actual: {result['actual_url'] or '(empty)'}\n"
-            f"Pending: {result['pending_update_count']}\n"
-            f"Error: {result['last_error_message'] or 'None'}"
-        )
-
-    return result, 200
 
 
 def send_message(chat_id: int, text: str) -> None:
