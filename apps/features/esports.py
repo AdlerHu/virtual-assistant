@@ -1,9 +1,12 @@
+from datetime import datetime, timedelta
+
 from apps.services.schedule_parser import (
     parse_schedule_range,
 )
 from apps.services.time_service import (
     get_user_timezone,
     format_local,
+    now_local,
 )
 
 
@@ -19,7 +22,7 @@ def check_esports(
     db,
 ) -> str:
     """
-    查詢指定日期或日期範圍內，
+    根據自然語言查詢指定日期範圍內，
     已建立提醒的 LOL 賽事。
     """
 
@@ -38,6 +41,63 @@ def check_esports(
 
     except ValueError as exc:
         return str(exc)
+
+    return get_matches(
+        start_at=start_at,
+        end_at=end_at,
+        label=label,
+        db=db,
+        timezone_name=timezone_name,
+    )
+
+
+def get_today_followed_matches(
+    chat_id: int,
+    db,
+) -> str:
+    """
+    查詢今天已建立提醒的 LOL 賽事。
+    不經過自然語言 parser。
+    """
+
+    timezone_name = get_user_timezone(
+        db=db,
+        chat_id=chat_id,
+    )
+
+    now = now_local(timezone_name)
+
+    start_at = now.replace(
+        hour=0,
+        minute=0,
+        second=0,
+        microsecond=0,
+    )
+
+    end_at = start_at + timedelta(
+        days=1,
+    )
+
+    return get_matches(
+        start_at=start_at,
+        end_at=end_at,
+        label="今天",
+        db=db,
+        timezone_name=timezone_name,
+    )
+
+
+def get_matches(
+    start_at: datetime,
+    end_at: datetime,
+    label: str,
+    db,
+    timezone_name: str,
+) -> str:
+    """
+    查詢指定時間範圍內，
+    auto_reminders 中的 LOL 賽事。
+    """
 
     docs = (
         db.collection("auto_reminders")
@@ -61,28 +121,15 @@ def check_esports(
 
         match_type = data.get("type")
 
-        # auto_reminders 未來可能有其他類型，
-        # esports 只處理 LOL 賽事。
         if match_type not in ESPORTS_TYPES:
             continue
 
-        if (
-            data.get("status")
-            == "cancelled"
-        ):
+        if data.get("status") == "cancelled":
             continue
 
-        event_at = data.get(
-            "event_at"
-        )
-
-        team1 = data.get(
-            "team1"
-        )
-
-        team2 = data.get(
-            "team2"
-        )
+        event_at = data.get("event_at")
+        team1 = data.get("team1")
+        team2 = data.get("team2")
 
         if (
             event_at is None
@@ -93,16 +140,13 @@ def check_esports(
 
         matches.append({
             "event_at": event_at,
-            "league": ESPORTS_TYPES[
-                match_type
-            ],
+            "league": ESPORTS_TYPES[match_type],
             "team1": team1,
             "team2": team2,
         })
 
     matches.sort(
-        key=lambda item:
-            item["event_at"]
+        key=lambda item: item["event_at"]
     )
 
     if not matches:
@@ -115,10 +159,8 @@ def check_esports(
         f"{len(matches)} 場你關注的 LOL 比賽："
     ]
 
-    # 與 check_schedule 使用相同顯示邏輯
     is_multi_day = (
-        end_at.date()
-        - start_at.date()
+        end_at.date() - start_at.date()
     ).days > 1
 
     for index, item in enumerate(
@@ -131,7 +173,6 @@ def check_esports(
                 timezone_name=timezone_name,
                 fmt="%m/%d %H:%M",
             )
-
         else:
             event_time = format_local(
                 item["event_at"],

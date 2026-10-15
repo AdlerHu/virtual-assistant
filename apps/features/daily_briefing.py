@@ -1,6 +1,9 @@
 from apps.features.schedule import (
     get_today_schedule,
 )
+from apps.features.esports import (
+    get_today_followed_matches,
+)
 from apps.services.time_service import (
     get_user_timezone,
     now_local,
@@ -29,9 +32,7 @@ def daily_briefing(
 
     now = now_local(timezone_name)
 
-    weekday = WEEKDAYS[
-        now.weekday()
-    ]
+    weekday = WEEKDAYS[now.weekday()]
 
     date_text = (
         f"{now:%Y/%m/%d} "
@@ -43,8 +44,14 @@ def daily_briefing(
         db=db,
     )
 
+    esports_text = get_today_followed_matches(
+        chat_id=chat_id,
+        db=db,
+    )
+
     return (
         f"今天是 {date_text}\n\n"
-        f"今天預定行程如下：\n"
-        f"{schedule_text}"
+        f"📅 今天預定行程如下：\n"
+        f"{schedule_text}\n\n"
+        f"🎮 {esports_text}"
     )
