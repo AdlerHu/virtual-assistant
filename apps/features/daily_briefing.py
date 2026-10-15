@@ -53,5 +53,7 @@ def daily_briefing(
         f"今天是 {date_text}\n\n"
         f"📅 今天預定行程如下：\n"
         f"{schedule_text}\n\n"
-        f"🎮 {esports_text}"
+        f"🎮 {esports_text}\n\n"
+        f"🗣️ English Coach\n"
+        f"記得練英文。"
     )

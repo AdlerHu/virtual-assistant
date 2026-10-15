@@ -15,6 +15,8 @@ from apps.features.lol_worlds import (
 )
 from apps.services.intent_router import intent_router
 
+from apps.features.english_coach import english_reminder
+
 app = Flask(__name__)
 
 
@@ -244,6 +246,18 @@ def run_daily_briefing():
         chat_id=TELEGRAM_CHAT_ID,
         db=db,
     )
+
+    send_message(
+        TELEGRAM_CHAT_ID,
+        message,
+    )
+
+    return "", 200
+
+
+@app.post("/tasks/english-reminder")
+def run_english_reminder():
+    message = english_reminder()
 
     send_message(
         TELEGRAM_CHAT_ID,
