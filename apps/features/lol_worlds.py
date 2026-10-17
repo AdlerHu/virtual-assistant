@@ -75,8 +75,7 @@ def sync_worlds_reminders(
         notify_at = (
             event_at
             - timedelta(
-                minutes=
-                    remind_before_minutes
+                minutes=remind_before_minutes
             )
         )
 
@@ -291,6 +290,13 @@ def get_worlds_matches(
         if len(teams) != 2:
             continue
 
+        # 只處理雙方隊伍都已確定的比賽
+        if any(
+            str(team.get("slug") or "").lower() in ("", "tbd")
+            for team in teams
+        ):
+            continue
+
         team_slugs = {
             str(
                 team.get("slug")
@@ -367,7 +373,7 @@ def get_worlds_matches(
                     teams[0].get(
                         "name"
                     ),
-            },
+                },
 
             "team2": {
                 "slug":
@@ -384,7 +390,7 @@ def get_worlds_matches(
                     teams[1].get(
                         "name"
                     ),
-            },
+                },
 
             "best_of": (
                 event
@@ -395,7 +401,7 @@ def get_worlds_matches(
                 .get(
                     "count"
                 )
-            ),
+                ),
 
             "block_name":
                 block_name,

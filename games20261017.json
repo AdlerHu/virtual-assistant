@@ -1,0 +1,1539 @@
+{
+    "success": true,
+    "data": {
+        "leagueId": "lol-worlds",
+        "leagueName": "Worlds",
+        "total": 42,
+        "count": 42,
+        "limit": 50,
+        "offset": 0,
+        "hasMore": false,
+        "nextOffset": null,
+        "events": [
+            {
+                "startTime": "2026-10-17T18:00:00.000Z",
+                "state": "unstarted",
+                "type": "match",
+                "blockName": "Play-Ins",
+                "matchId": "lol-match-115660588583171798",
+                "tournamentId": "lol-worlds_2026",
+                "teams": [
+                    {
+                        "slug": "mvk",
+                        "name": "MVK Esports",
+                        "code": "MVK",
+                        "imageUrl": "http://static.lolesports.com/teams/1767089709161_White_Logo.png",
+                        "score": 0
+                    },
+                    {
+                        "slug": "furia",
+                        "name": "FURIA",
+                        "code": "FUR",
+                        "imageUrl": "http://static.lolesports.com/teams/FURIA---black.png",
+                        "score": 0
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 5
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 0,
+                    "expectedGames": 5,
+                    "gamesReady": false,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2026-10-18T18:00:00.000Z",
+                "state": "unstarted",
+                "type": "match",
+                "blockName": "Play-Ins",
+                "matchId": "lol-match-116299649498303884",
+                "tournamentId": "lol-worlds_2026",
+                "teams": [
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    },
+                    {
+                        "slug": "kc",
+                        "name": "Karmine Corp",
+                        "code": "KC",
+                        "imageUrl": "http://static.lolesports.com/teams/1704714951336_KC.png",
+                        "score": 0
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 5
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 0,
+                    "expectedGames": 5,
+                    "gamesReady": false,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2026-10-23T17:00:00.000Z",
+                "state": "unstarted",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-115660540726095005",
+                "tournamentId": "lol-worlds_2026",
+                "teams": [
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    },
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 1
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 0,
+                    "expectedGames": 1,
+                    "gamesReady": false,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2026-10-23T18:00:00.000Z",
+                "state": "unstarted",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-115660540726095007",
+                "tournamentId": "lol-worlds_2026",
+                "teams": [
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    },
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 1
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 0,
+                    "expectedGames": 1,
+                    "gamesReady": false,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2026-10-23T19:00:00.000Z",
+                "state": "unstarted",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-115660540726095009",
+                "tournamentId": "lol-worlds_2026",
+                "teams": [
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    },
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 1
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 0,
+                    "expectedGames": 1,
+                    "gamesReady": false,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2026-10-23T20:00:00.000Z",
+                "state": "unstarted",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-115660540726095011",
+                "tournamentId": "lol-worlds_2026",
+                "teams": [
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    },
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 1
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 0,
+                    "expectedGames": 1,
+                    "gamesReady": false,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2026-10-23T21:00:00.000Z",
+                "state": "unstarted",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-115660540726095013",
+                "tournamentId": "lol-worlds_2026",
+                "teams": [
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    },
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 1
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 0,
+                    "expectedGames": 1,
+                    "gamesReady": false,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2026-10-23T22:00:00.000Z",
+                "state": "unstarted",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-115660540726095015",
+                "tournamentId": "lol-worlds_2026",
+                "teams": [
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    },
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 1
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 0,
+                    "expectedGames": 1,
+                    "gamesReady": false,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2026-10-23T23:00:00.000Z",
+                "state": "unstarted",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-115660540726095017",
+                "tournamentId": "lol-worlds_2026",
+                "teams": [
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    },
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 1
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 0,
+                    "expectedGames": 1,
+                    "gamesReady": false,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2026-10-24T00:00:00.000Z",
+                "state": "unstarted",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-115660540726095019",
+                "tournamentId": "lol-worlds_2026",
+                "teams": [
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    },
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 1
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 0,
+                    "expectedGames": 1,
+                    "gamesReady": false,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2026-10-24T17:00:00.000Z",
+                "state": "unstarted",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-115660540726095021",
+                "tournamentId": "lol-worlds_2026",
+                "teams": [
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    },
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 1
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 0,
+                    "expectedGames": 1,
+                    "gamesReady": false,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2026-10-24T18:00:00.000Z",
+                "state": "unstarted",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-115660540726095023",
+                "tournamentId": "lol-worlds_2026",
+                "teams": [
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    },
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 1
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 0,
+                    "expectedGames": 1,
+                    "gamesReady": false,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2026-10-24T19:00:00.000Z",
+                "state": "unstarted",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-115660540726095025",
+                "tournamentId": "lol-worlds_2026",
+                "teams": [
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    },
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 1
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 0,
+                    "expectedGames": 1,
+                    "gamesReady": false,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2026-10-24T20:00:00.000Z",
+                "state": "unstarted",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-115660540726095027",
+                "tournamentId": "lol-worlds_2026",
+                "teams": [
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    },
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 1
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 0,
+                    "expectedGames": 1,
+                    "gamesReady": false,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2026-10-24T21:00:00.000Z",
+                "state": "unstarted",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-115660540726095029",
+                "tournamentId": "lol-worlds_2026",
+                "teams": [
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    },
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 1
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 0,
+                    "expectedGames": 1,
+                    "gamesReady": false,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2026-10-24T22:00:00.000Z",
+                "state": "unstarted",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-115660540726095031",
+                "tournamentId": "lol-worlds_2026",
+                "teams": [
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    },
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 1
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 0,
+                    "expectedGames": 1,
+                    "gamesReady": false,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2026-10-24T23:00:00.000Z",
+                "state": "unstarted",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-115660540726095033",
+                "tournamentId": "lol-worlds_2026",
+                "teams": [
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    },
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 1
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 0,
+                    "expectedGames": 1,
+                    "gamesReady": false,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2026-10-25T00:00:00.000Z",
+                "state": "unstarted",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-115660540726095035",
+                "tournamentId": "lol-worlds_2026",
+                "teams": [
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    },
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 1
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 0,
+                    "expectedGames": 1,
+                    "gamesReady": false,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2026-10-25T17:00:00.000Z",
+                "state": "unstarted",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-115660540726095045",
+                "tournamentId": "lol-worlds_2026",
+                "teams": [
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    },
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 1
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 0,
+                    "expectedGames": 1,
+                    "gamesReady": false,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2026-10-25T18:00:00.000Z",
+                "state": "unstarted",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-115660540726095047",
+                "tournamentId": "lol-worlds_2026",
+                "teams": [
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    },
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 1
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 0,
+                    "expectedGames": 1,
+                    "gamesReady": false,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2026-10-25T19:00:00.000Z",
+                "state": "unstarted",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-115660540726095037",
+                "tournamentId": "lol-worlds_2026",
+                "teams": [
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    },
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 3
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 0,
+                    "expectedGames": 3,
+                    "gamesReady": false,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2026-10-25T22:00:00.000Z",
+                "state": "unstarted",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-115660540726095041",
+                "tournamentId": "lol-worlds_2026",
+                "teams": [
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    },
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 3
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 0,
+                    "expectedGames": 3,
+                    "gamesReady": false,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2026-10-26T17:00:00.000Z",
+                "state": "unstarted",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-115660540726095049",
+                "tournamentId": "lol-worlds_2026",
+                "teams": [
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    },
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 1
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 0,
+                    "expectedGames": 1,
+                    "gamesReady": false,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2026-10-26T18:00:00.000Z",
+                "state": "unstarted",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-115660540726095051",
+                "tournamentId": "lol-worlds_2026",
+                "teams": [
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    },
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 1
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 0,
+                    "expectedGames": 1,
+                    "gamesReady": false,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2026-10-26T19:00:00.000Z",
+                "state": "unstarted",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-115660540726095053",
+                "tournamentId": "lol-worlds_2026",
+                "teams": [
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    },
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 3
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 0,
+                    "expectedGames": 3,
+                    "gamesReady": false,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2026-10-26T22:00:00.000Z",
+                "state": "unstarted",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-115660540726095057",
+                "tournamentId": "lol-worlds_2026",
+                "teams": [
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    },
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 3
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 0,
+                    "expectedGames": 3,
+                    "gamesReady": false,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2026-10-28T20:00:00.000Z",
+                "state": "unstarted",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-115660540726095061",
+                "tournamentId": "lol-worlds_2026",
+                "teams": [
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    },
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 3
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 0,
+                    "expectedGames": 3,
+                    "gamesReady": false,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2026-10-28T23:00:00.000Z",
+                "state": "unstarted",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-115660540726095065",
+                "tournamentId": "lol-worlds_2026",
+                "teams": [
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    },
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 3
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 0,
+                    "expectedGames": 3,
+                    "gamesReady": false,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2026-10-29T20:00:00.000Z",
+                "state": "unstarted",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-115660540726095069",
+                "tournamentId": "lol-worlds_2026",
+                "teams": [
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    },
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 3
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 0,
+                    "expectedGames": 3,
+                    "gamesReady": false,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2026-10-29T23:00:00.000Z",
+                "state": "unstarted",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-115660540726095073",
+                "tournamentId": "lol-worlds_2026",
+                "teams": [
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    },
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 3
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 0,
+                    "expectedGames": 3,
+                    "gamesReady": false,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2026-10-30T20:00:00.000Z",
+                "state": "unstarted",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-115660540726095077",
+                "tournamentId": "lol-worlds_2026",
+                "teams": [
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    },
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 3
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 0,
+                    "expectedGames": 3,
+                    "gamesReady": false,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2026-10-30T23:00:00.000Z",
+                "state": "unstarted",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-115660540726095081",
+                "tournamentId": "lol-worlds_2026",
+                "teams": [
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    },
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 3
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 0,
+                    "expectedGames": 3,
+                    "gamesReady": false,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2026-10-31T17:00:00.000Z",
+                "state": "unstarted",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-115660540726095085",
+                "tournamentId": "lol-worlds_2026",
+                "teams": [
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    },
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 3
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 0,
+                    "expectedGames": 3,
+                    "gamesReady": false,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2026-10-31T20:00:00.000Z",
+                "state": "unstarted",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-115660540726095089",
+                "tournamentId": "lol-worlds_2026",
+                "teams": [
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    },
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 3
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 0,
+                    "expectedGames": 3,
+                    "gamesReady": false,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2026-10-31T23:00:00.000Z",
+                "state": "unstarted",
+                "type": "match",
+                "blockName": "Swiss",
+                "matchId": "lol-match-115660540726095093",
+                "tournamentId": "lol-worlds_2026",
+                "teams": [
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    },
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 3
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 0,
+                    "expectedGames": 3,
+                    "gamesReady": false,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2026-11-03T22:00:00.000Z",
+                "state": "unstarted",
+                "type": "match",
+                "blockName": "Quarterfinals",
+                "matchId": "lol-match-115660540726095097",
+                "tournamentId": "lol-worlds_2026",
+                "teams": [
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    },
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 5
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 0,
+                    "expectedGames": 5,
+                    "gamesReady": false,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2026-11-04T22:00:00.000Z",
+                "state": "unstarted",
+                "type": "match",
+                "blockName": "Quarterfinals",
+                "matchId": "lol-match-115660540726095103",
+                "tournamentId": "lol-worlds_2026",
+                "teams": [
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    },
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 5
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 0,
+                    "expectedGames": 5,
+                    "gamesReady": false,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2026-11-05T22:00:00.000Z",
+                "state": "unstarted",
+                "type": "match",
+                "blockName": "Quarterfinals",
+                "matchId": "lol-match-115660540726095109",
+                "tournamentId": "lol-worlds_2026",
+                "teams": [
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    },
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 5
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 0,
+                    "expectedGames": 5,
+                    "gamesReady": false,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2026-11-06T22:00:00.000Z",
+                "state": "unstarted",
+                "type": "match",
+                "blockName": "Quarterfinals",
+                "matchId": "lol-match-115660540726095115",
+                "tournamentId": "lol-worlds_2026",
+                "teams": [
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    },
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 5
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 0,
+                    "expectedGames": 5,
+                    "gamesReady": false,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2026-11-07T22:00:00.000Z",
+                "state": "unstarted",
+                "type": "match",
+                "blockName": "Semifinals",
+                "matchId": "lol-match-115660540726095121",
+                "tournamentId": "lol-worlds_2026",
+                "teams": [
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    },
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 5
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 0,
+                    "expectedGames": 5,
+                    "gamesReady": false,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2026-11-08T22:00:00.000Z",
+                "state": "unstarted",
+                "type": "match",
+                "blockName": "Semifinals",
+                "matchId": "lol-match-115660540726095127",
+                "tournamentId": "lol-worlds_2026",
+                "teams": [
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    },
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 5
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 0,
+                    "expectedGames": 5,
+                    "gamesReady": false,
+                    "playerStatsReady": false
+                }
+            },
+            {
+                "startTime": "2026-11-14T19:00:00.000Z",
+                "state": "unstarted",
+                "type": "match",
+                "blockName": "Finals",
+                "matchId": "lol-match-115660540726095133",
+                "tournamentId": "lol-worlds_2026",
+                "teams": [
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    },
+                    {
+                        "slug": "tbd",
+                        "name": "TBD",
+                        "code": "TBD",
+                        "imageUrl": "https://api.citoapi.com/api/v1/public/images/lol/stored/team-tbd-73ceed1f.png",
+                        "score": 0
+                    }
+                ],
+                "strategy": {
+                    "type": "bestOf",
+                    "count": 5
+                },
+                "leagueId": "lol-worlds",
+                "leagueName": "Worlds",
+                "coverage": {
+                    "gamesCount": 0,
+                    "expectedGames": 5,
+                    "gamesReady": false,
+                    "playerStatsReady": false
+                }
+            }
+        ],
+        "pages": {},
+        "pagination": {
+            "mode": "offset",
+            "limit": 50,
+            "offset": 0,
+            "nextOffset": null,
+            "usage": "Pass offset + limit query params to fetch the next page, e.g. ?state=completed&from=2026-04-01&to=2026-05-31&offset=50&limit=50"
+        },
+        "meta": {
+            "defaultScope": "upcoming_biased",
+            "source": "db"
+        }
+    }
+}
